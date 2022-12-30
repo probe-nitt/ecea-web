@@ -1,0 +1,42 @@
+{
+    "name": "ecea-app",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite --host",
+        "build": "tsc && vite build",
+        "preview": "vite preview",
+        "lint": "eslint '**/*.{ts,tsx}'",
+        "lintfix": "eslint '**/*.{ts,tsx}' --fix"
+    },
+    "dependencies": {
+        "@emotion/react": "^11.10.5",
+        "@emotion/styled": "^11.10.5",
+        "@mui/material": "^5.10.16",
+        "@mui/styled-engine-sc": "^5.10.16",
+        "@mui/system": "^5.11.2",
+        "eslint-config-airbnb-typescript": "^17.0.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-icons": "^4.7.1",
+        "react-router-dom": "^6.4.4",
+        "styled-components": "^5.3.6"
+    },
+    "devDependencies": {
+        "@types/react": "^18.0.24",
+        "@types/react-dom": "^18.0.8",
+        "@typescript-eslint/eslint-plugin": "^5.45.0",
+        "@typescript-eslint/parser": "^5.45.0",
+        "@vitejs/plugin-react": "^2.2.0",
+        "eslint": "^8.29.0",
+        "eslint-config-airbnb": "^19.0.4",
+        "eslint-config-standard": "^17.0.0",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-n": "^15.5.1",
+        "eslint-plugin-promise": "^6.1.1",
+        "eslint-plugin-react": "^7.31.11",
+        "typescript": "^4.6.4",
+        "vite": "^3.2.3"
+    }
+}
