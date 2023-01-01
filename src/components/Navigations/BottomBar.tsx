@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import navigations from '../../constants/navigations';
+import { navBarBgColor, navBarShadow } from '../../themes/colors';
 import NavBarItem from './NavBarItem';
 import { NavitemProps } from './types';
 
@@ -8,11 +9,12 @@ const BottomBarContent = styled('div')({
   position: 'fixed',
   width: '100%',
   bottom: 0,
-  background: '#00001d',
+  background: navBarBgColor,
   flexDirection: 'row',
   justifyContent: 'space-around',
   zIndex: 2,
-  boxShadow: '0 0 0.25rem 0 rgb(100, 100, 100)',
+  padding: '0.3rem 0',
+  boxShadow: navBarShadow,
   '@media (max-width: 767px)': {
     display: 'flex',
   },

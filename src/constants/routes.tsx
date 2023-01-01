@@ -5,7 +5,7 @@ const Teams = () => <h1>Teams</h1>;
 
 const router = [
   {
-    path: 'home',
+    path: '',
     element: <Home />,
   },
   {

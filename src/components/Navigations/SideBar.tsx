@@ -1,20 +1,21 @@
-import { styled } from '@mui/system';
+import { Box, styled } from '@mui/system';
 import { Divider } from '@mui/material';
 import Logo from './Logo';
-import navigations from '../../constants/navigations';
+import navigations, { generals } from '../../constants/navigations';
 import { NavitemProps } from './types';
 import NavBarItem from './NavBarItem';
 import { socialIcons } from '../../constants/socialicons';
+import textColor, { dividerColor, navBarBgColor, navBarShadow } from '../../themes/colors';
 
 const NavBarContent = styled('div')({
-  width: '230px',
-  background: '#00001d',
+  width: '225px',
+  background: navBarBgColor,
+  boxShadow: navBarShadow,
   height: '100vh',
   position: 'fixed',
   overflowY: 'auto',
   display: 'flex',
-  zIndex: 2,
-  boxShadow: '0 0 0.5rem 0 rgb(100, 100, 100)',
+  zIndex: 1,
   flexDirection: 'column',
   alignItems: 'flex-start',
   '@media (max-width: 767px)': {
@@ -25,22 +26,21 @@ const NavBarContent = styled('div')({
 const NavList = styled('ul')({
   width: '100%',
   padding: 0,
-  margin: '0.55rem 0',
+  margin: '0.5rem 0',
   position: 'static',
 });
 
 const Text = styled('div')({
-  paddingLeft: '2rem',
-  paddingTop: '1.2rem',
-  paddingBottom: '0.1rem',
-  fontSize: '1.1rem',
-  color: 'white',
+  paddingLeft: '1.6rem',
+  paddingTop: '1rem',
+  fontSize: '0.9rem',
+  color: textColor,
   fontWeight: 500,
 });
 
 const Line = () => (
   <Divider sx={{
-    borderColor: 'rgb(100, 100, 100)',
+    borderColor: dividerColor,
     boxShadow: '0 0 0.5rem 0 rgb(100, 100, 100)',
     width: '100%',
   }}
@@ -55,10 +55,15 @@ const SideBar = () => (
       {navigations.map((nav: NavitemProps) => <NavBarItem key={nav.path} {...nav} />)}
     </NavList>
     <Line />
+    <NavList>
+      {generals.map((nav: NavitemProps) => <NavBarItem key={nav.path} {...nav} />)}
+    </NavList>
+    <Line />
     <Text>Follow us on</Text>
     <NavList>
       {socialIcons.map((nav: NavitemProps) => <NavBarItem key={nav.path} {...nav} isHref />)}
     </NavList>
+    <Box flex={1} />
   </NavBarContent>
 );
 

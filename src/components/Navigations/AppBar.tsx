@@ -1,4 +1,5 @@
 import { styled } from '@mui/system';
+import { navBarShadow } from '../../themes/colors';
 import Logo from './Logo';
 
 const AppBarContent = styled('div')({
@@ -9,7 +10,7 @@ const AppBarContent = styled('div')({
   overflowY: 'auto',
   flexDirection: 'column',
   zIndex: 2,
-  boxShadow: '0 0 0.25rem 0 rgb(100, 100, 100)',
+  boxShadow: navBarShadow,
   alignItems: 'flex-start',
   '@media (max-width: 767px)': {
     display: 'flex',

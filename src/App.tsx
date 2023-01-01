@@ -4,6 +4,7 @@ import AppBar from './components/Navigations/AppBar';
 import SideBar from './components/Navigations/SideBar';
 import BottomBar from './components/Navigations/BottomBar';
 import router from './constants/routes';
+import { pageBgColor } from './themes/colors';
 
 const Structure = styled('div')({
   display: 'flex',
@@ -18,7 +19,7 @@ const Structure = styled('div')({
 const Page = styled('div')({
   flex: 1,
   height: '100%',
-  backgroundColor: '#00001d',
+  backgroundColor: pageBgColor,
   padding: '1.5rem',
   marginLeft: '230px',
   '@media (max-width: 767px)': {
