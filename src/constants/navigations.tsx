@@ -1,8 +1,8 @@
-import { MdOutlinePodcasts } from 'react-icons/md';
+import { MdOutlineDarkMode, MdOutlinePodcasts } from 'react-icons/md';
 import {
   VscOrganization, VscHome,
 } from 'react-icons/vsc';
-import { TbBooks, TbLogin, TbSettings } from 'react-icons/tb';
+import { TbBooks, TbLogin } from 'react-icons/tb';
 
 const navigations = [
   {
@@ -29,9 +29,9 @@ const navigations = [
 
 export const generals = [
   {
-    label: 'Settings',
-    path: 'settings',
-    element: <TbSettings />,
+    label: 'Dark Mode',
+    path: '#',
+    element: <MdOutlineDarkMode />,
   },
   {
     label: 'Login',

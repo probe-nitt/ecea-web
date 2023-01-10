@@ -1,7 +1,7 @@
 import { Box, styled } from '@mui/system';
 import { Divider } from '@mui/material';
 import Logo from './Logo';
-import navigations, { generals } from '../../constants/navigations';
+import navigations from '../../constants/navigations';
 import { NavitemProps } from './types';
 import NavBarItem from './NavBarItem';
 import { socialIcons } from '../../constants/socialicons';
@@ -26,14 +26,15 @@ const NavBarContent = styled('div')({
 const NavList = styled('ul')({
   width: '100%',
   padding: 0,
-  margin: '0.5rem 0',
+  margin: '0.5rem 0 0.9rem 0',
   position: 'static',
 });
 
-const Text = styled('div')({
+const Text = styled('h2')({
   paddingLeft: '1.6rem',
+  margin: 0,
   paddingTop: '1rem',
-  fontSize: '0.9rem',
+  fontSize: '0.95rem',
   color: textColor,
   fontWeight: 500,
 });
@@ -55,10 +56,10 @@ const SideBar = () => (
       {navigations.map((nav: NavitemProps) => <NavBarItem key={nav.path} {...nav} />)}
     </NavList>
     <Line />
-    <NavList>
+    {/* <NavList>
       {generals.map((nav: NavitemProps) => <NavBarItem key={nav.path} {...nav} />)}
     </NavList>
-    <Line />
+    <Line /> */}
     <Text>Follow us on</Text>
     <NavList>
       {socialIcons.map((nav: NavitemProps) => <NavBarItem key={nav.path} {...nav} isHref />)}

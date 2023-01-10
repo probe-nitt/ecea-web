@@ -1,7 +1,6 @@
-const Home = () => <h1>Home</h1>;
-const Podcasts = () => <h1>Podcasts</h1>;
-const Resources = () => <h1>Resources</h1>;
-const Teams = () => <h1>Teams</h1>;
+import Home from '../containers/Home';
+import Resources from '../containers/Resources';
+import Teams from '../containers/Teams';
 
 const router = [
   {
@@ -18,7 +17,7 @@ const router = [
   },
   {
     path: 'podcasts',
-    element: <Podcasts />,
+    element: <Resources />,
   },
 ];
 

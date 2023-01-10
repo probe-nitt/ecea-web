@@ -10,6 +10,7 @@ const AppBarContent = styled('div')({
   overflowY: 'auto',
   flexDirection: 'column',
   zIndex: 2,
+  position: 'fixed',
   boxShadow: navBarShadow,
   alignItems: 'flex-start',
   '@media (max-width: 767px)': {

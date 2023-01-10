@@ -11,7 +11,7 @@ const BottomBarContent = styled('div')({
   bottom: 0,
   background: navBarBgColor,
   flexDirection: 'row',
-  justifyContent: 'space-around',
+  justifyContent: 'space-evenly',
   zIndex: 2,
   padding: '0.3rem 0',
   boxShadow: navBarShadow,

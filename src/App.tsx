@@ -1,10 +1,12 @@
 import { Outlet, Route, Routes } from 'react-router-dom';
 import { styled } from '@mui/system';
+import { ThemeProvider } from '@mui/material/styles';
 import AppBar from './components/Navigations/AppBar';
 import SideBar from './components/Navigations/SideBar';
 import BottomBar from './components/Navigations/BottomBar';
 import router from './constants/routes';
 import { pageBgColor } from './themes/colors';
+import theme from './themes/themes';
 
 const Structure = styled('div')({
   display: 'flex',
@@ -18,12 +20,13 @@ const Structure = styled('div')({
 
 const Page = styled('div')({
   flex: 1,
-  height: '100%',
-  backgroundColor: pageBgColor,
+  height: 'fit-content',
+  background: pageBgColor,
+  animation: 'gradient 15s ease infinite',
   padding: '1.5rem',
   marginLeft: '230px',
   '@media (max-width: 767px)': {
-    margin: 0,
+    margin: '4.5rem 0',
   },
 });
 
@@ -39,17 +42,19 @@ const Layout = () => (
 );
 
 const App = () => (
-  <Routes>
-    <Route path="" element={<Layout />}>
-      {router.map((nav) => (
-        <Route
-          key={nav.path}
-          path={nav.path}
-          element={nav.element}
-        />
-      ))}
-    </Route>
-  </Routes>
+  <ThemeProvider theme={theme}>
+    <Routes>
+      <Route path="" element={<Layout />}>
+        {router.map((nav) => (
+          <Route
+            key={nav.path}
+            path={nav.path}
+            element={nav.element}
+          />
+        ))}
+      </Route>
+    </Routes>
+  </ThemeProvider>
 );
 
 export default App;

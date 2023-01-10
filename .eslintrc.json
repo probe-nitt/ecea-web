@@ -24,6 +24,13 @@
     ],
     "rules": {
         "react/jsx-props-no-spreading": "off",
+        "prefer-destructuring": [
+            "error",
+            {
+                "object": false,
+                "array": false
+            }
+        ],
         "semi": [
             "error",
             "always"

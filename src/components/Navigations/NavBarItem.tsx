@@ -30,6 +30,7 @@ const NavitemLink = styled('a')<NavindicatorProps>(({ bg, isActive }) => ({
   borderRadius: '0.8rem',
   span: {
     fontSize: '0.9rem',
+    marginTop: '0.2rem',
   },
   ':hover': {
     color: textColor,
@@ -41,7 +42,7 @@ const NavitemLink = styled('a')<NavindicatorProps>(({ bg, isActive }) => ({
     padding: '0.3rem 0rem',
     margin: '0',
     span: {
-      fontSize: '0.75rem',
+      fontSize: '0.6rem',
     },
     color: isActive ? navActiveColorMobile : navInActiveColorMobile,
     background: navInActiveBgColor,

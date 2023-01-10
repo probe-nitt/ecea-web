@@ -14,6 +14,72 @@
   -webkit-text-size-adjust: 100%;
 }
 
+@font-face {
+    font-family: "Lovelo Line Light";
+    src: url('assets/fonts/LoveloLineLight.otf');
+}
+@font-face {
+    font-family: "Josefin Sans Light";
+    src: url('assets/fonts/JosefinSansLight.ttf');
+}
+@font-face {
+    font-family: "Cardiff";
+    src: url('assets/fonts/Cardiff.ttf');
+}
+@font-face {
+    font-family: "Raweng";
+    src: url('assets/fonts/RawengulksansB.otf');
+}
+@font-face {
+    font-family: "Steiner Light";
+    src: url('assets/fonts/SteinerLight.ttf');
+}
+@font-face {
+    font-family: "Trueno Light";
+    src: url('assets/fonts/TruenoLight.otf');
+}
+@font-face {
+    font-family: "Titillium";
+    src: url('assets/fonts/Titillium.ttf');
+}
+@font-face {
+    font-family:"Josefin Sans Bold";
+    src: url('assets/fonts/JosefinSansBold.ttf');
+}
+
+@font-face {
+    font-family:"Falling Sky Cond";
+    src: url('assets/fonts/FallingSkyCond.otf');
+}
+html {
+    background-color: #00001d;
+    /* background: radial-gradient(circle, #27285e, #1f2050, #181942,#0f0330); */
+}
+h1 {
+    font-family: "Lovelo Line Light", sans-serif;
+}
+h2 {
+    font-family: "Josefin Sans Light", sans-serif;
+}
+h3 {
+    font-family: "Raweng", sans-serif;
+}
+h4 {
+    font-family: "Josefin Sans Light", sans-serif;
+}
+h5 {
+    font-family: "Falling Sky Cond", sans-serif;
+}
+div {
+    font-family: "Josefin Sans Bold", sans-serif;
+}
+p {
+    font-family: "Josefin Sans Light", sans-serif;
+}
+
+html {
+    background-color: #00001d;
+}
 a {
   font-weight: 500;
   color: #646cff;
@@ -28,6 +94,8 @@ body {
   display: flex;
   place-items: center;
   min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #00001d;
 }
 
 @media (prefers-color-scheme: light) {
@@ -46,4 +114,42 @@ body {
 .icon{ 
     display: inline-block;
     align-self: center;
+}
+
+.icon2{ 
+    display: inline;
+    margin-top: -2.5rem;
+    background: white;
+    color: rgb(71, 191, 191);
+    padding: 0.65rem;
+    margin-right: 1rem;
+    border-radius: 50%;
+}
+
+.gallery {
+   box-shadow:  0rem 0rem 0.75rem 0rem #6AE1DD;
+   border-radius: 0.25rem;
+}
+.gallery:hover {
+   transform: scale(1.02);     
+}
+body::-webkit-scrollbar-track {
+    background-color: #001011;
+  }
+  
+  body::-webkit-scrollbar {
+    width: 9px;
+    background-color: #001011;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #57E2E5;
+    border-radius: 10px;
+  }  
+
+  @keyframes spin { 
+    100% { 
+        -webkit-transform: rotate(30deg); 
+        transform:rotate(30deg); 
+    } 
 }
