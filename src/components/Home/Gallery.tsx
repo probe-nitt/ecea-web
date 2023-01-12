@@ -2,26 +2,31 @@ import {
   ImageList, ImageListItem, styled, useMediaQuery,
 } from '@mui/material';
 
-const Title = styled('h1')({
+const Title = styled('h1')(({ theme }) => ({
   padding: '0rem 0.25rem 0.2rem 0',
-  fontSize: '2.5rem',
+  fontSize: '3rem',
+  color: theme.palette.titleColor,
   '@media (max-width: 767px)': {
-    fontSize: '1.5rem',
+    fontSize: '2rem',
   },
 
-});
+}));
 
-const Wrapper = styled('div')({
+const Wrapper = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   gap: 4,
-  padding: '3rem 4.5rem',
+  padding: '2rem',
   justifySelf: 'center',
-  background: 'neutral',
+  alignItems: 'center',
+  margin: '4rem',
+  borderRadius: '0.4rem',
+  background: theme.palette.sectionBgColor,
   '@media (max-width: 767px)': {
     padding: '1rem',
+    margin: '3rem 0rem',
   },
-});
+}));
 
 const itemData = [
   {

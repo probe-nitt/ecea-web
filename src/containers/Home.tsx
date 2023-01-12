@@ -5,29 +5,32 @@ import Gallery from '../components/Home/Gallery';
 
 const Wrapper = styled('div')({
   paddingBottom: '2rem',
+  '@media (max-width: 767px)': {
+    padding: 0,
+  },
 });
 
 const Banner = styled('div')({
   width: '100%',
-  height: '200px',
+  height: '30vh',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   '@media (max-width: 767px)': {
     marginLeft: 0,
-    height: '180px',
+    height: '28vh',
   },
 });
 
 const Background = styled('img')({
-  height: '220px',
+  height: '37vh',
   width: '100%',
-  objectPosition: '70% 75%',
-  position: 'absolute',
-  objectFit: 'fill',
+  objectPosition: '20% 20%',
+  objectFit: 'cover',
   '@media (max-width: 767px)': {
     marginLeft: 0,
-    height: '200px',
+    objectPosition: '0% 400%',
+    height: '33.5vh',
   },
 });
 
@@ -43,11 +46,14 @@ const Logo = styled('img')({
 });
 
 const Home = () => {
-  const img = new URL('../assets/images/ecea.png', import.meta.url).href;
+  const img = new URL(
+    '../assets/images/ecead.png',
+    import.meta.url,
+  ).href;
   return (
     <Wrapper>
       <Banner>
-        <Background alt="logo" src="https://www.dennismacaspac.com/assets/images/giphy-2.gif" />
+        <Background alt="logo" src="https://img.freepik.com/free-vector/technology-circuit-lines-shiny-banner_1017-33024.jpg" />
         <Logo src={img} />
       </Banner>
       <About />

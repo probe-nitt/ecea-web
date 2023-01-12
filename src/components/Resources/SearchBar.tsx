@@ -2,14 +2,11 @@ import { styled } from '@mui/system';
 import { useMemo } from 'react';
 import { IconContext } from 'react-icons';
 import { MdSearch } from 'react-icons/md';
-import {
-  searchBarColor, searchBarShadow, searchBarText,
-} from '../../themes/colors';
 
-export const SearchBarBg = styled('div')({
-  background: searchBarColor,
+export const SearchBarBg = styled('div')(({ theme }) => ({
+  background: theme.palette.searchBarColor,
   height: '3rem',
-  boxShadow: searchBarShadow,
+  boxShadow: theme.palette.searchBarShadow,
   margin: '0.5rem 7.5rem',
   borderRadius: '0.7rem',
   display: 'flex',
@@ -17,11 +14,11 @@ export const SearchBarBg = styled('div')({
     margin: '0rem 1rem',
     height: '2.8rem',
   },
-});
+}));
 
-const Search = styled('div')({
+const Search = styled('div')(({ theme }) => ({
   fontSize: '1rem',
-  color: searchBarText,
+  color: theme.palette.searchBarText,
   display: 'flex',
   fontWeight: 'bold',
   gap: '0.7rem',
@@ -32,7 +29,7 @@ const Search = styled('div')({
     fontSize: '0.75rem',
     padding: '0.65rem',
   },
-});
+}));
 
 const SearchBar = () => {
   const iconValue = useMemo(() => ({

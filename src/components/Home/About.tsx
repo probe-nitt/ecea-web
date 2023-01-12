@@ -1,25 +1,27 @@
 import { styled } from '@mui/material';
-import textColor from '../../themes/colors';
 
-const Title = styled('h1')({
+const Title = styled('h1')(({ theme }) => ({
   padding: '0rem 0.25rem 0.2rem 0',
   fontSize: '2.5rem',
+  color: theme.palette.titleColor,
   '@media (max-width: 767px)': {
     fontSize: '1.5rem',
   },
+}));
 
-});
-
-const DescriptionBox = styled('div')({
+const DescriptionBox = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'space-around',
-  padding: '4rem 4rem 0 4rem',
+  padding: '4rem 2rem',
   gap: '1rem',
+  margin: '4rem',
+  borderRadius: '0.4rem',
+  background: theme.palette.sectionBgColor,
   iframe: {
     flex: 2,
-    aspectRatio: '3 / 2.25',
+    aspectRatio: '2.5 / 2',
     display: 'inline-block',
     padding: '1rem',
     height: '20rem',
@@ -27,31 +29,32 @@ const DescriptionBox = styled('div')({
   },
   '@media (max-width: 1200px)': {
     flexDirection: 'column',
-    padding: '2rem 1rem',
+    padding: '1rem 1rem',
+    margin: 0,
     iframe: {
       width: '85%',
-      aspectRatio: '3 / 2.75',
-      padding: '1rem',
+      aspectRatio: '3 / 2.5',
+      padding: '0.1rem',
     },
   },
-});
+}));
 
 const DescriptionWrapper = styled('div')({
   display: 'flex',
   flexDirection: 'column',
-  padding: '0rem 1rem',
+  padding: '2rem 1rem',
   justifyContent: 'flex-start',
-  flex: 2,
+  flex: 2.5,
 });
 
-const Description = styled('p')({
+const Description = styled('p')(({ theme }) => ({
   fontSize: '1.2rem',
   padding: '0.1rem',
-  color: textColor,
+  color: theme.palette.textColor,
   '@media (max-width: 767px)': {
     fontSize: '1rem',
   },
-});
+}));
 
 const About = () => (
   <DescriptionBox>

@@ -1,25 +1,28 @@
-/* eslint-disable react/destructuring-assignment */
 import { styled } from '@mui/system';
-import textColor from '../../themes/colors';
 import ResourceCard from './ResourceCard';
 import { Resources, Subject } from './types';
 
-const Content = styled('div')({
-  margin: '4rem 1rem',
+const Content = styled('div')(({ theme }) => ({
+  margin: '2rem 0.5rem',
+  borderRadius: '0.4rem',
+  padding: '1.5rem 0.5rem',
+  background: theme.palette.sectionBgColor,
   '@media (max-width: 767px)': {
     margin: '3rem 0rem',
   },
-});
+}));
 
-const Title = styled('h3')({
-  marginLeft: '1rem',
-  fontWeight: 'bolder',
-  fontSize: '1.35em',
-  color: textColor,
+const Title = styled('h6')(({ theme }) => ({
+  margin: '1.5rem 1rem 1.5rem 2rem',
+  fontWeight: 900,
+  fontSize: '1.35rem',
+  color: theme.palette.subTitleColor,
   '@media (max-width: 767px)': {
-    fontSize: '1.2em',
+    fontSize: '1.3rem',
+    textAlign: 'center',
+    margin: '1rem 0rem',
   },
-});
+}));
 
 const Row = styled('div')({
   alignItems: 'stretch',
@@ -34,21 +37,26 @@ const Row = styled('div')({
     display: 'none',
   },
   '@media (max-width: 767px)': {
-    marginTop: '0.75rem',
-    padding: '0.1rem 0rem',
+    marginTop: '2rem',
+    padding: '0.2rem 0rem',
   },
 });
 
 interface ResourceProps {
   resources: Resources[]
 }
-const ResourcesList = (props:ResourceProps) => (
+const ResourcesList = ({ resources }:ResourceProps) => (
   <>
-    {props.resources.map((resource:Resources) => (
-      <Content>
+    {resources.map((resource:Resources) => (
+      <Content key={resource.subjectCategory}>
         <Title>{resource.subjectCategory}</Title>
         <Row>
-          {resource.subjects.map((subject:Subject) => <ResourceCard subject={subject} />)}
+          {resource.subjects.map((subject:Subject) => (
+            <ResourceCard
+              key={subject.subjectName}
+              subject={subject}
+            />
+          ))}
         </Row>
       </Content>
     ))}

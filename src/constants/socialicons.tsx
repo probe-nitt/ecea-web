@@ -2,6 +2,8 @@ import {
   SlSocialFacebook, SlSocialInstagram, SlSocialLinkedin, SlSocialTwitter,
 } from 'react-icons/sl';
 
+import { SiMedium } from 'react-icons/si';
+
 export const socialIcons = [
   {
     label: 'Facebook',
@@ -31,6 +33,13 @@ export const socialIcons = [
     element: <SlSocialTwitter />,
     path: 'https://twitter.com/probe_nitt?lang=en',
     bgColor: '#00acee',
+    angle: 'rotate(0deg) translate(-30px,0px)',
+  },
+  {
+    label: 'Medium',
+    element: <SiMedium />,
+    path: 'https://medium.com/probe-nit-trichy',
+    bgColor: '#f4bc00',
     angle: 'rotate(0deg) translate(-30px,0px)',
   },
 ];

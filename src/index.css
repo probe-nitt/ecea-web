@@ -56,7 +56,7 @@ html {
     /* background: radial-gradient(circle, #27285e, #1f2050, #181942,#0f0330); */
 }
 h1 {
-    font-family: "Lovelo Line Light", sans-serif;
+    font-family: "Falling Sky Cond", sans-serif;
 }
 h2 {
     font-family: "Josefin Sans Light", sans-serif;
@@ -69,6 +69,9 @@ h4 {
 }
 h5 {
     font-family: "Falling Sky Cond", sans-serif;
+}
+h6 {
+    font-family: "Trueno Light", sans-serif;
 }
 div {
     font-family: "Josefin Sans Bold", sans-serif;
@@ -119,32 +122,30 @@ body {
 .icon2{ 
     display: inline;
     margin-top: -2.5rem;
-    background: white;
-    color: rgb(71, 191, 191);
     padding: 0.65rem;
     margin-right: 1rem;
     border-radius: 50%;
 }
 
 .gallery {
-   box-shadow:  0rem 0rem 0.75rem 0rem #6AE1DD;
-   border-radius: 0.25rem;
+   border-radius: 0.1rem;
 }
 .gallery:hover {
-   transform: scale(1.02);     
+   transform: scale(1.01);     
+   box-shadow:  0rem 0rem 0.4rem 0.2rem #6AE1DD;
 }
 body::-webkit-scrollbar-track {
-    background-color: #001011;
+    background-color: #aaaaaa;
   }
   
   body::-webkit-scrollbar {
-    width: 9px;
-    background-color: #001011;
+    width: 10px;
+    background-color: #000000;
   }
   
   body::-webkit-scrollbar-thumb {
-    background-color: #57E2E5;
-    border-radius: 10px;
+    background-color: #007fea;
+    border-radius: 1px;
   }  
 
   @keyframes spin { 

@@ -1,8 +1,7 @@
 import { styled } from '@mui/system';
-import { navBarShadow } from '../../themes/colors';
 import Logo from './Logo';
 
-const AppBarContent = styled('div')({
+const AppBarContent = styled('div')(({ theme }) => ({
   display: 'none',
   width: '100%',
   background: '#00001d',
@@ -10,13 +9,14 @@ const AppBarContent = styled('div')({
   overflowY: 'auto',
   flexDirection: 'column',
   zIndex: 2,
+  backgroundColor: theme.palette.navBarBgColor,
   position: 'fixed',
-  boxShadow: navBarShadow,
+  boxShadow: theme.palette.navBarShadow,
   alignItems: 'flex-start',
   '@media (max-width: 767px)': {
     display: 'flex',
   },
-});
+}));
 
 const AppBar = () => (
   <AppBarContent>

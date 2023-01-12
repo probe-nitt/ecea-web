@@ -5,15 +5,15 @@ import navigations from '../../constants/navigations';
 import { NavitemProps } from './types';
 import NavBarItem from './NavBarItem';
 import { socialIcons } from '../../constants/socialicons';
-import textColor, { dividerColor, navBarBgColor, navBarShadow } from '../../themes/colors';
+import DarkModeToggle from './DarkModeToggle';
 
-const NavBarContent = styled('div')({
-  width: '225px',
-  background: navBarBgColor,
-  boxShadow: navBarShadow,
+const NavBarContent = styled('div')(({ theme }) => ({
+  width: '227px',
+  background: theme.palette.navBarBgColor,
+  boxShadow: theme.palette.navBarShadow,
   height: '100vh',
   position: 'fixed',
-  overflowY: 'auto',
+  overflowY: 'hidden',
   display: 'flex',
   zIndex: 1,
   flexDirection: 'column',
@@ -21,7 +21,7 @@ const NavBarContent = styled('div')({
   '@media (max-width: 767px)': {
     display: 'none',
   },
-});
+}));
 
 const NavList = styled('ul')({
   width: '100%',
@@ -30,18 +30,18 @@ const NavList = styled('ul')({
   position: 'static',
 });
 
-const Text = styled('h2')({
+const Text = styled('h2')(({ theme }) => ({
   paddingLeft: '1.6rem',
   margin: 0,
   paddingTop: '1rem',
   fontSize: '0.95rem',
-  color: textColor,
+  color: theme.palette.hintColor,
   fontWeight: 500,
-});
+}));
 
-const Line = () => (
+export const Line = () => (
   <Divider sx={{
-    borderColor: dividerColor,
+    borderColor: 'dividerColor',
     boxShadow: '0 0 0.5rem 0 rgb(100, 100, 100)',
     width: '100%',
   }}
@@ -56,15 +56,13 @@ const SideBar = () => (
       {navigations.map((nav: NavitemProps) => <NavBarItem key={nav.path} {...nav} />)}
     </NavList>
     <Line />
-    {/* <NavList>
-      {generals.map((nav: NavitemProps) => <NavBarItem key={nav.path} {...nav} />)}
-    </NavList>
-    <Line /> */}
     <Text>Follow us on</Text>
-    <NavList>
+    <NavList style={{ overflowY: 'scroll', marginBottom: 0 }}>
       {socialIcons.map((nav: NavitemProps) => <NavBarItem key={nav.path} {...nav} isHref />)}
     </NavList>
     <Box flex={1} />
+    <Line />
+    <DarkModeToggle />
   </NavBarContent>
 );
 

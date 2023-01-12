@@ -1,31 +1,27 @@
 import { styled } from '@mui/system';
-import textColor, {
-  navBarShadow,
-  ResourceCardColor, ResourceCardHover, ResourceCardHoverShadow, ResourceCardShadow,
-} from '../../themes/colors';
 import SocialIcons from './SocialIcons';
 import { Team } from './types';
 
-const Card = styled('div')({
+const Card = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   width: '15rem',
   height: 'fit-content',
-  padding: '1.5rem 1.2rem',
+  padding: '1.5rem 1.2rem 2.5rem 1.2rem',
   borderRadius: '0.4rem',
   alignItems: 'center',
-  backgroundColor: ResourceCardColor,
-  boxShadow: ResourceCardShadow,
+  backgroundColor: theme.palette.ResourceCardColor,
+  boxShadow: theme.palette.ResourceCardShadow,
   margin: '0.75rem 1rem',
   img: {
     borderRadius: '50%',
-    boxShadow: ResourceCardShadow,
+    boxShadow: theme.palette.ResourceCardShadow,
     height: '11rem',
     width: '11rem',
     margin: '2rem 0rem',
   },
   h3: {
-    color: textColor,
+    color: theme.palette.textColor,
     fontFamily: 'Josefin Sans Bold',
     margin: '0.1rem 0 0.15rem 0',
     fontWeight: 'bold',
@@ -33,29 +29,31 @@ const Card = styled('div')({
   h5: {
     margin: '0.1rem 0 1.5rem 0',
     fontWeight: 400,
+    color: theme.palette.titleColor,
+  },
+  span: {
+    color: theme.palette.titleColor,
   },
   '@media (min-width: 767px)': {
     ':hover': {
-      background: ResourceCardHover,
-      boxShadow: ResourceCardHoverShadow,
+      background: theme.palette.ResourceCardHover,
+      boxShadow: theme.palette.ResourceCardHoverShadow,
       h5: {
-        color: '#000',
+        color: theme.palette.cardTextHover,
       },
       h3: {
-        color: '#000',
+        color: theme.palette.cardTextHover,
       },
       img: {
         borderColor: '#0000',
-        boxShadow: navBarShadow,
+        boxShadow: theme.palette.navBarShadow,
       },
       span: {
-        color: '#000',
+        color: theme.palette.cardTextHover,
       },
     },
   },
   '@media (max-width: 767px)': {
-    minWidth: '85vw',
-    padding: '1.6rem 0.8rem',
     img: {
       height: '11rem',
       width: '11rem',
@@ -68,8 +66,7 @@ const Card = styled('div')({
       margin: '0.1rem 0 1.2rem 0',
     },
   },
-
-});
+}));
 
 interface TeamProps {
   member: Team

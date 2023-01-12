@@ -1,3 +1,4 @@
+import { useTheme } from '@mui/material';
 import { styled } from '@mui/system';
 
 const LogoImage = styled('img')({
@@ -11,7 +12,11 @@ const LogoImage = styled('img')({
 });
 
 const Logo = () => {
-  const img = new URL('../../assets/images/ecea.png', import.meta.url).href;
+  const theme = useTheme();
+  const img = new URL(
+    `../../assets/images/ecea-${theme.palette.mode}.png`,
+    import.meta.url,
+  ).href;
   return <LogoImage src={img} />;
 };
 

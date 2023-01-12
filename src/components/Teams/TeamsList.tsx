@@ -3,8 +3,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { useState } from 'react';
-import styled from '@emotion/styled';
-import textColor from '../../themes/colors';
+import { styled } from '@mui/system';
 import { Team } from './types';
 import TeamCard from './TeamsCard';
 
@@ -22,19 +21,26 @@ const Layout = styled('div')({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
+
 });
 
-const DropDown = styled('div')({
+const DropDown = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'stretch',
   h4: {
-    color: textColor,
+    color: theme.palette.textColor,
+    fontSize: '1.2rem',
     margin: '0.2rem',
     paddingRight: '0.3rem',
   },
+  '@media (max-width: 767px)': {
+    h4: {
+      fontSize: '0.9rem',
+    },
+  },
+}));
 
-});
 const TeamsList = ({ teams }:TeamProps) => {
   const [year, setYear] = useState('2023');
   return (
@@ -54,7 +60,10 @@ const TeamsList = ({ teams }:TeamProps) => {
             onChange={(event) => setYear(event.target.value)}
           >
             {years.map((y:string) => (
-              <MenuItem value={y}>
+              <MenuItem
+                key={y}
+                value={y}
+              >
                 {y}
               </MenuItem>
             ))}
@@ -67,7 +76,9 @@ const TeamsList = ({ teams }:TeamProps) => {
         justifyContent="center"
         alignItems="center"
         spacing={1}
-        maxWidth="90%"
+        sx={{
+          maxWidth: { xs: '100%', md: '90%' },
+        }}
       >
         {teams.map((member:Team) => (
           <Grid

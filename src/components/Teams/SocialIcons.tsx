@@ -8,13 +8,21 @@ const IconsList = styled('div')({
   flexDirection: 'row',
   gap: '1rem',
   justifyContent: 'center',
-  margin: '0.25rem 0 1rem 0',
 });
 
 const icons = [
-  <TbBrandFacebook />,
-  <TbBrandInstagram />,
-  <TbBrandLinkedin />,
+  {
+    name: 'facebook',
+    value: <TbBrandFacebook />,
+  },
+  {
+    name: 'instagra',
+    value: <TbBrandInstagram />,
+  },
+  {
+    name: 'linkedIn',
+    value: <TbBrandLinkedin />,
+  },
 ];
 
 const SocialIcons = () => {
@@ -26,9 +34,10 @@ const SocialIcons = () => {
     <IconsList>
       {icons.map((icon) => (
         <IconContext.Provider
+          key={icon.name}
           value={iconValue}
         >
-          {icon}
+          {icon.value}
         </IconContext.Provider>
       ))}
     </IconsList>

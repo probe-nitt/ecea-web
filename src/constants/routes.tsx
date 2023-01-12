@@ -1,4 +1,5 @@
 import Home from '../containers/Home';
+import Podcasts from '../containers/Podcasts';
 import Resources from '../containers/Resources';
 import Teams from '../containers/Teams';
 
@@ -17,7 +18,7 @@ const router = [
   },
   {
     path: 'podcasts',
-    element: <Resources />,
+    element: <Podcasts />,
   },
 ];
 

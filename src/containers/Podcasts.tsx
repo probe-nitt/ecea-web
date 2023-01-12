@@ -1,7 +1,5 @@
 import { styled } from '@mui/system';
-import ResourcesList from '../components/Resources/ResourceList';
-// import SearchBar from '../components/Resources/SearchBar';
-import { resources } from '../constants/dummy';
+import PodcastsTab from '../components/Podcasts/PodcastsTab';
 
 const Wrapper = styled('div')(({ theme }) => ({
   padding: '2rem 1.5rem',
@@ -16,12 +14,11 @@ const Wrapper = styled('div')(({ theme }) => ({
   },
 }));
 
-const Resources = () => (
+const Podcasts = () => (
   <Wrapper>
-    <h1>Core Resources</h1>
-    {/* <SearchBar /> */}
-    <ResourcesList resources={resources} />
+    <h1>Podcasts</h1>
+    <PodcastsTab />
   </Wrapper>
 );
 
-export default Resources;
+export default Podcasts;

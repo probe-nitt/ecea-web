@@ -1,17 +1,21 @@
-import styled from '@emotion/styled';
+import { styled } from '@mui/system';
 import TeamsList from '../components/Teams/TeamsList';
 import { teams } from '../constants/dummy';
 
-const Layout = styled('div')({
+const Layout = styled('div')(({ theme }) => ({
   display: 'flex',
-  paddingBottom: '6rem',
+  padding: '2rem 0.5rem',
   flexDirection: 'column',
   h1: {
+    color: theme.palette.titleColor,
     textAlign: 'center',
-    paddingBottom: '1.5rem',
+    paddingBottom: '0.75rem',
     fontSize: '2.5rem',
   },
-});
+  '@media (max-width: 767px)': {
+    padding: '2rem 0rem',
+  },
+}));
 
 const Teams = () => (
   <Layout>
