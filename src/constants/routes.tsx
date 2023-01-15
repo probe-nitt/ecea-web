@@ -1,7 +1,9 @@
-import Home from '../containers/Home';
-import Podcasts from '../containers/Podcasts';
-import Resources from '../containers/Resources';
-import Teams from '../containers/Teams';
+import { lazy } from 'react';
+
+const Home = lazy(() => import ('../containers/Home'));
+const Podcasts = lazy(() => import('../containers/Podcasts'));
+const Resources = lazy(() => import('../containers/Resources'));
+const Teams = lazy(() => import('../containers/Teams'));
 
 const router = [
   {

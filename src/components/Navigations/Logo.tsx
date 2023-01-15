@@ -17,7 +17,7 @@ const Logo = () => {
     `../../assets/images/ecea-${theme.palette.mode}.png`,
     import.meta.url,
   ).href;
-  return <LogoImage src={img} />;
+  return <LogoImage alt="ecea-logo" src={img} />;
 };
 
 export default Logo;

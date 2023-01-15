@@ -111,7 +111,7 @@ export const lightTheme = createTheme({
     navHoverColor: '#fff',
     navHoverBgColor: '#0c7db14e',
     navInActiveColor: '#434343',
-    navDefaultBgColor: '#007fea',
+    navDefaultBgColor: '#006Fdd',
     navInActiveBgColor: 'transparent',
     navActiveColorMobile: '#007fea',
     navInActiveColorMobile: 'rgb(141, 141, 141)',

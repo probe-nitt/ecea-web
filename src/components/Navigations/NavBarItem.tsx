@@ -13,7 +13,7 @@ const Navitem = styled('li')({
   },
 });
 
-const NavitemLink = styled('a')<NavindicatorProps>(({ theme, bg, isActive }) => ({
+const NavitemContent = styled('div')<NavindicatorProps>(({ theme, bg, isActive }) => ({
   fontSize: '1rem',
   display: 'flex',
   fontWeight: 'bold',
@@ -49,8 +49,8 @@ const NavitemLink = styled('a')<NavindicatorProps>(({ theme, bg, isActive }) => 
   },
 }));
 
-const NavBarItem = ({
-  path, isHref, bgColor, element, label,
+const NavItemLink = ({
+  path, bgColor, element, label,
 }: NavitemProps) => {
   const location = useLocation();
   const theme = useTheme();
@@ -58,23 +58,52 @@ const NavBarItem = ({
     className: 'icon',
   }), []);
   return (
-    <Navitem key={path}>
-      <Link to={path} target={isHref ? '_blank' : undefined}>
-        <NavitemLink
-          href={path}
-          bg={bgColor === undefined ? theme.palette.navHoverBgColor : bgColor}
-          isActive={location.pathname === `/${path}`}
-        >
-          <IconContext.Provider
-            value={iconValue}
-          >
-            {element}
-          </IconContext.Provider>
-          <span>{label}</span>
-        </NavitemLink>
-      </Link>
-    </Navitem>
+    <NavitemContent
+      bg={bgColor === undefined ? theme.palette.navHoverBgColor : bgColor}
+      isActive={location.pathname === `/${path}`}
+    >
+      <IconContext.Provider
+        value={iconValue}
+      >
+        {element}
+      </IconContext.Provider>
+      <span>{label}</span>
+    </NavitemContent>
   );
 };
+
+const NavBarItem = ({
+  path, isHref, bgColor, element, label,
+}: NavitemProps) => (
+  <Navitem key={path}>
+    {isHref
+      ? (
+        <a
+          href={path}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <NavItemLink
+            path={path}
+            bgColor={bgColor}
+            element={element}
+            label={label}
+          />
+        </a>
+      )
+      : (
+        <Link
+          to={path}
+        >
+          <NavItemLink
+            path={path}
+            bgColor={bgColor}
+            element={element}
+            label={label}
+          />
+        </Link>
+      )}
+  </Navitem>
+);
 
 export default NavBarItem;

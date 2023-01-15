@@ -2,14 +2,15 @@ import { Outlet, Route, Routes } from 'react-router-dom';
 import { styled } from '@mui/system';
 import { ThemeProvider } from '@mui/material';
 import {
+  Suspense,
   useEffect, useMemo, useState,
 } from 'react';
-import AppBar from './components/Navigations/AppBar';
-import SideBar from './components/Navigations/SideBar';
-import BottomBar from './components/Navigations/BottomBar';
 import router from './constants/routes';
 import { darkTheme, lightTheme } from './config/themes';
 import ThemingContext from './config/context';
+import AppBar from './components/Navigations/AppBar';
+import SideBar from './components/Navigations/SideBar';
+import BottomBar from './components/Navigations/BottomBar';
 
 const Structure = styled('div')({
   display: 'flex',
@@ -38,7 +39,21 @@ const Layout = () => (
     <AppBar />
     <SideBar />
     <Page>
-      <Outlet />
+      <Suspense fallback={(
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100vh',
+          width: '100%',
+        }}
+        >
+          Loading....
+        </div>
+      )}
+      >
+        <Outlet />
+      </Suspense>
     </Page>
     <BottomBar />
   </Structure>

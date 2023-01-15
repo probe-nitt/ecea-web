@@ -3,11 +3,12 @@ import navigations from '../../constants/navigations';
 import NavBarItem from './NavBarItem';
 import { NavitemProps } from './types';
 
-const BottomBarContent = styled('div')(({ theme }) => ({
+const BottomBarContent = styled('ul')(({ theme }) => ({
   display: 'none',
   position: 'fixed',
   width: '100%',
   bottom: 0,
+  marginBottom: 0,
   background: theme.palette.navBarBgColor,
   flexDirection: 'row',
   justifyContent: 'space-around',

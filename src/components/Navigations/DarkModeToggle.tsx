@@ -1,9 +1,9 @@
-import { Switch } from '@mui/material';
+import { FormControlLabel, Switch } from '@mui/material';
 import { styled } from '@mui/system';
 import { useContext } from 'react';
 import ThemingContext, { ThemeContextType } from '../../config/context';
 
-const Navitem = styled('li')({
+const Navitem = styled('div')({
   listStyleType: 'none',
   margin: '0.35rem -0.65rem',
   '@media (max-width: 767px)': {
@@ -38,16 +38,16 @@ const NavitemLink = styled('div')(({ theme }) => ({
 }));
 
 const DarkModeSwitch = styled(Switch)(({ theme }) => ({
-  width: 40,
+  width: 36,
   height: 24,
   padding: 7,
   '& .MuiSwitch-switchBase': {
     margin: '3.8px 1px 2px -2px',
     padding: 0,
-    transform: 'translate(5px,-1px)',
+    transform: 'translate(5px,0px)',
     '&.Mui-checked': {
       color: theme.palette.textColor,
-      transform: 'translate(18px,-1.2px)',
+      transform: 'translate(18px,-1px)',
       '& .MuiSwitch-thumb:before': {
         backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="10" width="12" viewBox="0 0 20 20"><path fill="${encodeURIComponent(
           theme.palette.navActiveColor,
@@ -61,8 +61,8 @@ const DarkModeSwitch = styled(Switch)(({ theme }) => ({
   },
   '& .MuiSwitch-thumb': {
     backgroundColor: theme.palette.titleColor,
-    width: 18,
-    height: 18,
+    width: 16,
+    height: 16,
     '&:before': {
       content: '\'\'',
       position: 'absolute',
@@ -89,15 +89,21 @@ const DarkModeToggle = () => {
   return (
     <Navitem>
       <NavitemLink>
-        <DarkModeSwitch
-          checked={theme === 'dark'}
-          onChange={() => {
-            const chosenTheme = theme === 'dark' ? 'light' : 'dark';
-            setTheme(chosenTheme);
-            localStorage.setItem('theme', chosenTheme);
-          }}
+        <FormControlLabel
+          sx={{ marginLeft: '0.08rem', marginRight: '0rem' }}
+          control={(
+            <DarkModeSwitch
+              checked={theme === 'dark'}
+              onChange={() => {
+                const chosenTheme = theme === 'dark' ? 'light' : 'dark';
+                setTheme(chosenTheme);
+                localStorage.setItem('theme', chosenTheme);
+              }}
+            />
+        )}
+          label=""
         />
-        <span>Dark-Mode</span>
+        <span>Darkmode</span>
       </NavitemLink>
     </Navitem>
   );

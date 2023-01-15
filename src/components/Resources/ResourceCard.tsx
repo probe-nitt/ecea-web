@@ -4,7 +4,7 @@ import { Subject } from './types';
 const Card = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
-  maxWidth: '14rem',
+  width: 'fit-content',
   fontWeight: 900,
   padding: '0.8rem',
   borderRadius: '0.5rem',
@@ -20,15 +20,13 @@ const Card = styled('div')(({ theme }) => ({
     transform: 'scale(1.02)',
   },
   '@media (max-width: 767px)': {
-    maxWidth: '11.5rem',
-    height: '12.5rem',
-    margin: '0.75rem 0.75rem',
+    margin: '1rem',
   },
 }));
 
 const Image = styled('img')({
-  width: '100%',
-  height: '14rem',
+  aspectRatio: '1/2',
+  height: '12.5rem',
   borderRadius: '0.5rem',
 
 });

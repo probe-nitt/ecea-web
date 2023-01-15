@@ -5,9 +5,8 @@ import { Team } from './types';
 const Card = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
-  width: '15rem',
   height: 'fit-content',
-  padding: '1.5rem 1.2rem 2.5rem 1.2rem',
+  padding: '1.5rem 2.25rem 2.5rem 2.25rem',
   borderRadius: '0.4rem',
   alignItems: 'center',
   backgroundColor: theme.palette.ResourceCardColor,
@@ -16,7 +15,6 @@ const Card = styled('div')(({ theme }) => ({
   img: {
     borderRadius: '50%',
     boxShadow: theme.palette.ResourceCardShadow,
-    height: '11rem',
     width: '11rem',
     margin: '2rem 0rem',
   },
@@ -55,8 +53,6 @@ const Card = styled('div')(({ theme }) => ({
   },
   '@media (max-width: 767px)': {
     img: {
-      height: '11rem',
-      width: '11rem',
       margin: '1rem 0rem',
     },
     h3: {

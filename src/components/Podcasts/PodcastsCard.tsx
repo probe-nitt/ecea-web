@@ -17,7 +17,7 @@ const Card = styled('div')(({ theme }) => ({
     transform: 'scale(1.02)',
   },
   '@media (max-width: 767px)': {
-    width: '95%',
+    width: '20rem',
     margin: '1rem auto',
   },
 }));
@@ -28,9 +28,6 @@ const PodcastImage = styled('img')({
   height: '9rem',
   objectFit: 'fill',
   aspectRatio: '0.95',
-  '@media (max-width: 767px)': {
-    height: '8rem',
-  },
 });
 
 const PodcastContent = styled('div')(({ theme }) => ({
@@ -67,10 +64,18 @@ const PodcastContent = styled('div')(({ theme }) => ({
   '@media (max-width: 767px)': {
     padding: '0rem',
     h1: {
+      margin: '0.2rem 0',
       fontSize: '1rem',
     },
     h5: {
       fontSize: '0.7rem',
+    },
+    div: {
+      gap: '0.5rem',
+      h5: {
+
+        fontSize: '0.75rem',
+      },
     },
   },
 }));
@@ -78,9 +83,16 @@ const PodcastContent = styled('div')(({ theme }) => ({
 const PodcastIcon = styled(Icon)(({ theme }) => ({
   padding: '0.4rem',
   borderRadius: '50%',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
   cursor: 'pointer',
   boxShadow: theme.palette.navBarShadow,
   background: theme.palette.titleColor,
+  '@media (max-width: 767px)': {
+    width: '2rem',
+    height: '2rem',
+  },
 }));
 
 interface PodcastProps {
@@ -91,7 +103,7 @@ const PodcastCard = ({ podcast }:PodcastProps) => {
   const theme = useTheme();
   return (
     <Card>
-      <PodcastImage src={podcast.image} />
+      <PodcastImage alt={podcast.image} src={podcast.image} />
       <PodcastContent>
         <h1>{podcast.presenterName}</h1>
         <h5>{podcast.presenterDescription}</h5>

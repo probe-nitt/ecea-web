@@ -16,7 +16,7 @@ const DescriptionBox = styled('div')(({ theme }) => ({
   justifyContent: 'space-around',
   padding: '4rem 2rem',
   gap: '1rem',
-  margin: '4rem',
+  margin: '3rem 4rem',
   borderRadius: '0.4rem',
   background: theme.palette.sectionBgColor,
   iframe: {

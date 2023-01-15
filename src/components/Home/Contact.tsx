@@ -24,9 +24,9 @@ const ContactCard = styled('div')(({ theme }) => ({
   padding: '2rem',
   iframe: {
     width: '100%',
-    height: '300px',
+    height: '20rem',
     '@media (max-width: 767px)': {
-      height: '200px',
+      height: '16rem',
     },
   },
   '@media (max-width: 767px)': {
@@ -40,6 +40,7 @@ const ContactDetails = styled('div')(({ theme }) => ({
   flexDirection: 'row',
   alignItems: 'center',
   gap: 1,
+  width: '100%',
   span: {
     color: theme.palette.subTitleColor,
   },
@@ -48,6 +49,7 @@ const ContactDetails = styled('div')(({ theme }) => ({
 const ContactDetailsWrapper = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
+  width: '100%',
   h2: {
     fontSize: '1.4rem',
     color: theme.palette.titleColor,
@@ -72,7 +74,7 @@ const ContactIcon = styled(Icon)(({ theme }) => ({
   display: 'inline',
   marginTop: '-2.5rem',
   padding: '0.65rem',
-  marginRight: '1rem',
+  marginRight: '0.75rem',
   borderRadius: '50%',
   background: theme.palette.textColor,
 }));
