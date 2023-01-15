@@ -12,7 +12,8 @@ const Wrapper = styled('div')({
 
 const Banner = styled('div')({
   width: '100%',
-  height: '30vh',
+  marginTop: '-1.5rem',
+  height: '330px',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
@@ -23,7 +24,7 @@ const Banner = styled('div')({
 });
 
 const Background = styled('img')({
-  height: '37vh',
+  height: '100%',
   width: '100%',
   objectPosition: '20% 20%',
   objectFit: 'cover',

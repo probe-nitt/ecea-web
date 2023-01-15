@@ -30,39 +30,39 @@ const Wrapper = styled('div')(({ theme }) => ({
 
 const itemData = [
   {
-    img: '../../assets/images/img1.jpg',
+    img: new URL('../../assets/images/img1.jpg', import.meta.url).href,
     title: 'Bed',
   },
   {
-    img: '../../assets/images/img3.jpg',
+    img: new URL('../../assets/images/img3.jpg', import.meta.url).href,
     title: 'Sink',
   },
   {
-    img: '../../assets/images/img5.jpg',
+    img: new URL('../../assets/images/img5.jpg', import.meta.url).href,
     title: 'Blinds',
   },
   {
-    img: '../../assets/images/img6.jpg',
+    img: new URL('../../assets/images/img6.jpg', import.meta.url).href,
     title: 'Chairs',
   },
   {
-    img: '../../assets/images/img7.jpg',
+    img: new URL('../../assets/images/img7.jpg', import.meta.url).href,
     title: 'Laptop',
   },
   {
-    img: '../../assets/images/img2.jpg',
+    img: new URL('../../assets/images/img2.jpg', import.meta.url).href,
     title: 'Coffee',
   },
   {
-    img: '../../assets/images/img8.jpg',
+    img: new URL('../../assets/images/img8.jpg', import.meta.url).href,
     title: 'Doors',
   },
   {
-    img: '../../assets/images/img9.jpg',
+    img: new URL('../../assets/images/img9.jpg', import.meta.url).href,
     title: 'Coffee',
   },
   {
-    img: '../../assets/images/img10.jpg',
+    img: new URL('../../assets/images/img10.jpg', import.meta.url).href,
     title: 'Storage',
   },
 ];
@@ -84,9 +84,9 @@ const Gallery = () => {
             <ImageListItem key={item.img}>
               <img
                 className="gallery"
-                src={`${image}`}
-                srcSet={`${image}`}
-                alt={item.title}
+                src={`${image}?w=248&fit=crop&auto=format`}
+                srcSet={`${image}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                alt={image}
                 loading="lazy"
               />
             </ImageListItem>

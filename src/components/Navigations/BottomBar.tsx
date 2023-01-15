@@ -10,7 +10,7 @@ const BottomBarContent = styled('div')(({ theme }) => ({
   bottom: 0,
   background: theme.palette.navBarBgColor,
   flexDirection: 'row',
-  justifyContent: 'space-evenly',
+  justifyContent: 'space-around',
   zIndex: 2,
   padding: '0.3rem 0',
   boxShadow: theme.palette.navBarShadow,

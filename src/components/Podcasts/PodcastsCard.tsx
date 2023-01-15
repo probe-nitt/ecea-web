@@ -12,12 +12,12 @@ const Card = styled('div')(({ theme }) => ({
   padding: '0.5rem',
   borderRadius: '0.4rem',
   alignItems: 'center',
-  boxShadow: theme.palette.ResourceCardShadow,
+  boxShadow: theme.palette.PodcastCardShadow,
   ':hover': {
     transform: 'scale(1.02)',
   },
   '@media (max-width: 767px)': {
-    width: '20rem',
+    width: '95%',
     margin: '1rem auto',
   },
 }));
@@ -28,6 +28,9 @@ const PodcastImage = styled('img')({
   height: '9rem',
   objectFit: 'fill',
   aspectRatio: '0.95',
+  '@media (max-width: 767px)': {
+    height: '8rem',
+  },
 });
 
 const PodcastContent = styled('div')(({ theme }) => ({
@@ -62,11 +65,12 @@ const PodcastContent = styled('div')(({ theme }) => ({
     },
   },
   '@media (max-width: 767px)': {
+    padding: '0rem',
     h1: {
       fontSize: '1rem',
     },
     h5: {
-      fontSize: '0.8rem',
+      fontSize: '0.7rem',
     },
   },
 }));

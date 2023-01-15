@@ -11,17 +11,14 @@ const tabs = [
 
 const TabList = styled('ul')(({ theme }) => ({
   display: 'flex',
-  background: theme.palette.sectionBgColor,
+  background: theme.palette.navBarBgColor,
   boxShadow: theme.palette.PodcastTabShadow,
   justifyContent: 'center',
   listStyleType: 'none',
   width: 'fit-content',
-  margin: '0rem auto',
-  padding: '1.2rem 0.6rem',
-  borderRadius: '1rem 1rem 0 0',
-  '@media (max-width: 767px)': {
-    padding: '0.2',
-  },
+  margin: '1rem auto',
+  padding: '0.6rem 0.3rem',
+  borderRadius: '1rem',
 }));
 
 const TabItem = styled('li')<TabPanelProps>(({ theme, index, value }) => ({
@@ -34,16 +31,15 @@ const TabItem = styled('li')<TabPanelProps>(({ theme, index, value }) => ({
   justifyContent: 'center',
   alignItems: 'center',
   padding: '0.5rem 1rem',
-  margin: `0rem ${index === tabs[2] ? '0.5rem' : '-1rem'} 0rem ${tabs[0] ? '0.5rem' : '-1rem'}`,
-  background: index !== value ? 'transparent' : theme.palette.navDefaultBgColor,
-  borderRadius: '0.8rem',
+  margin: `0rem ${index === tabs[2] ? '0.5rem' : '0.06rem'} 0rem ${index === tabs[0] ? '0.5rem' : '0.06rem'}`,
+  background: index !== value ? theme.palette.navHoverBgColor : theme.palette.navDefaultBgColor,
+  borderRadius: `${index === tabs[0] ? '0.8rem' : 0}  ${index === tabs[2] ? '0.8rem' : 0}  ${index === tabs[2] ? '0.8rem' : 0} ${index === tabs[0] ? '0.8rem' : 0}`,
   '@media (max-width: 767px)': {
     height: '2rem',
-    width: '5rem',
+    width: '4rem',
+    margin: `0rem ${index === tabs[2] ? '0.2rem' : '0.06rem'} 0rem ${index === tabs[0] ? '0.2rem' : '0.06rem'}`,
     padding: '0.25rem 1rem',
-    borderRadius: '1rem',
-    margin: `0rem ${index === tabs[2] ? '0.35rem' : '-0.7rem'} 0rem ${tabs[0] ? '0.35rem' : '-0.7rem'}`,
-    fontSize: '0.6rem',
+    fontSize: '0.55rem',
   },
 
 }));
