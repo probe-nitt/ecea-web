@@ -28,6 +28,19 @@ const Wrapper = styled('div')(({ theme }) => ({
   },
 }));
 
+const ImageItem = styled(ImageListItem)(({ theme }) => ({
+  img: {
+    borderRadius: '0.1rem',
+    boxShadow: theme.palette.PodcastCardShadow,
+  },
+  ':hover': {
+    img: {
+      boxShadow: theme.palette.ResourceCardHoverShadow,
+      transform: 'scale(1.02)',
+    },
+  },
+}));
+
 const itemData = [
   {
     img: new URL('../../assets/images/img1.jpg', import.meta.url).href,
@@ -68,20 +81,20 @@ const itemData = [
 ];
 
 const Gallery = () => {
-  const mobile = useMediaQuery('(max-width:769px)');
+  const mobile = useMediaQuery('(max-width:1000px)');
   return (
     <Wrapper>
       <Title>Gallery</Title>
       <ImageList
         variant="masonry"
-        cols={mobile ? 1 : 3}
+        cols={mobile ? 1 : 2}
         style={{ padding: '1rem' }}
         gap={20}
       >
         {itemData.map((item) => {
           const image = new URL(item.img, import.meta.url).href;
           return (
-            <ImageListItem key={item.img}>
+            <ImageItem key={item.img}>
               <img
                 className="gallery"
                 src={`${image}?w=248&fit=crop&auto=format`}
@@ -89,7 +102,7 @@ const Gallery = () => {
                 alt={image}
                 loading="lazy"
               />
-            </ImageListItem>
+            </ImageItem>
           );
         })}
       </ImageList>

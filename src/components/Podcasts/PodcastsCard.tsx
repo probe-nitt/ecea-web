@@ -12,8 +12,10 @@ const Card = styled('div')(({ theme }) => ({
   padding: '0.5rem',
   borderRadius: '0.4rem',
   alignItems: 'center',
+  backgroundColor: theme.palette.cardColor,
   boxShadow: theme.palette.PodcastCardShadow,
   ':hover': {
+    boxShadow: theme.palette.ResourceCardHoverShadow,
     transform: 'scale(1.02)',
   },
   '@media (max-width: 767px)': {

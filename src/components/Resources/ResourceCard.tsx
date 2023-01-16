@@ -11,7 +11,7 @@ const Card = styled('div')(({ theme }) => ({
   flexBasis: '14rem',
   flexGrow: 0,
   flexShrink: 0,
-  backgroundColor: theme.palette.ResourceCardColor,
+  backgroundColor: theme.palette.cardColor,
   boxShadow: theme.palette.ResourceCardShadow,
   margin: '0.75rem 1rem',
   cursor: 'pointer',

@@ -9,8 +9,8 @@ const Card = styled('div')(({ theme }) => ({
   padding: '1.5rem 2.25rem 2.5rem 2.25rem',
   borderRadius: '0.4rem',
   alignItems: 'center',
-  backgroundColor: theme.palette.ResourceCardColor,
-  boxShadow: theme.palette.ResourceCardShadow,
+  backgroundColor: theme.palette.cardColor,
+  boxShadow: theme.palette.TeamCardShadow,
   margin: '0.75rem 1rem',
   img: {
     borderRadius: '50%',
