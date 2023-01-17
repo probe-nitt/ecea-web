@@ -1,4 +1,6 @@
+import { Box } from '@mui/material';
 import { styled } from '@mui/system';
+import DarkModeToggle from './DarkModeToggle';
 import Logo from './Logo';
 
 const AppBarContent = styled('div')(({ theme }) => ({
@@ -15,12 +17,18 @@ const AppBarContent = styled('div')(({ theme }) => ({
   alignItems: 'flex-start',
   '@media (max-width: 767px)': {
     display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 }));
 
 const AppBar = () => (
   <AppBarContent>
     <Logo />
+    <Box flex={1} />
+    <Box marginRight={1}>
+      <DarkModeToggle />
+    </Box>
   </AppBarContent>
 );
 

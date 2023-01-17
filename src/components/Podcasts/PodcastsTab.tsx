@@ -9,37 +9,32 @@ const tabs = [
   'Career Paths',
 ];
 
-const TabList = styled('ul')(({ theme }) => ({
+const TabList = styled('div')(({ theme }) => ({
   display: 'flex',
-  background: theme.palette.navBarBgColor,
+  alignSelf: 'center',
   boxShadow: theme.palette.PodcastTabShadow,
-  justifyContent: 'center',
+  margin: 'auto',
+  alignItems: 'center',
   listStyleType: 'none',
-  width: 'fit-content',
-  margin: '1rem auto',
-  padding: '0.6rem 0.3rem',
-  borderRadius: '1rem',
+  width: '50%',
+  borderRadius: '0.8rem',
+  '@media (max-width: 767px)': {
+    width: '92%',
+  },
 }));
 
-const TabItem = styled('li')<TabPanelProps>(({ theme, index, value }) => ({
+const TabItem = styled('div')<TabPanelProps>(({ theme, index, value }) => ({
   color: index === value ? theme.palette.navActiveColor : theme.palette.subTitleColor,
   fontSize: '0.8rem',
   cursor: 'pointer',
-  width: '8rem',
-  height: '2rem',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  padding: '0.5rem 1rem',
-  margin: `0rem ${index === tabs[2] ? '0.5rem' : '0.06rem'} 0rem ${index === tabs[0] ? '0.5rem' : '0.06rem'}`,
+  flex: 1,
+  textAlign: 'center',
+  padding: '0.75rem 0rem',
+  margin: `0rem ${index === tabs[2] ? '0rem' : '0.05rem'} 0rem ${index === tabs[0] ? '0rem' : '0.05rem'}`,
   background: index !== value ? theme.palette.navHoverBgColor : theme.palette.navDefaultBgColor,
   borderRadius: `${index === tabs[0] ? '0.8rem' : 0}  ${index === tabs[2] ? '0.8rem' : 0}  ${index === tabs[2] ? '0.8rem' : 0} ${index === tabs[0] ? '0.8rem' : 0}`,
   '@media (max-width: 767px)': {
-    height: '2rem',
-    width: '4rem',
-    margin: `0rem ${index === tabs[2] ? '0.2rem' : '0.06rem'} 0rem ${index === tabs[0] ? '0.2rem' : '0.06rem'}`,
-    padding: '0.25rem 1rem',
-    fontSize: '0.55rem',
+    fontSize: '0.65rem',
   },
 
 }));

@@ -77,16 +77,13 @@ const TeamsList = ({ teams }:TeamProps) => {
         alignItems="center"
         spacing={1}
         sx={{
-          maxWidth: { xs: '100%', md: '90%' },
+          maxWidth: { xs: '75%', md: '90%' },
         }}
       >
         {teams.map((member:Team) => (
-          <Grid
-            item
-            key={member.rollnumber}
-          >
-            <TeamCard member={member} />
-          </Grid>
+
+          <TeamCard key={member.rollnumber} member={member} />
+
         ))}
       </Grid>
     </Layout>

@@ -208,3 +208,42 @@ export const podcasts = [
     presenterDescription: 'MS in EEE, Arvind Balaji Narayan',
   },
 ];
+
+export const gallery = [
+  {
+    img: new URL('../assets/images/img1.jpg', import.meta.url).href,
+    title: 'Bed',
+  },
+  {
+    img: new URL('../assets/images/img3.jpg', import.meta.url).href,
+    title: 'Sink',
+  },
+  {
+    img: new URL('../assets/images/img5.jpg', import.meta.url).href,
+    title: 'Blinds',
+  },
+  {
+    img: new URL('../assets/images/img6.jpg', import.meta.url).href,
+    title: 'Chairs',
+  },
+  {
+    img: new URL('../assets/images/img7.jpg', import.meta.url).href,
+    title: 'Laptop',
+  },
+  {
+    img: new URL('../assets/images/img2.jpg', import.meta.url).href,
+    title: 'Coffee',
+  },
+  {
+    img: new URL('../assets/images/img8.jpg', import.meta.url).href,
+    title: 'Doors',
+  },
+  {
+    img: new URL('../assets/images/img9.jpg', import.meta.url).href,
+    title: 'Coffee',
+  },
+  {
+    img: new URL('../assets/images/img10.jpg', import.meta.url).href,
+    title: 'Storage',
+  },
+];
