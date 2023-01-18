@@ -1,6 +1,7 @@
 import {
   ImageList, ImageListItem, styled, useMediaQuery,
 } from '@mui/material';
+import { gallery } from '../../constants/dummy';
 
 const Title = styled('h1')(({ theme }) => ({
   padding: '0rem 0.25rem 0.2rem 0',
@@ -22,66 +23,48 @@ const Wrapper = styled('div')(({ theme }) => ({
   margin: '4rem',
   borderRadius: '0.4rem',
   background: theme.palette.sectionBgColor,
-  '@media (max-width: 767px)': {
+  '@media (max-width: 1200px)': {
     padding: '1rem',
     margin: '3rem 0rem',
   },
 }));
 
-const itemData = [
-  {
-    img: new URL('../../assets/images/img1.jpg', import.meta.url).href,
-    title: 'Bed',
+const ImageItem = styled(ImageListItem)(({ theme }) => ({
+  img: {
+    borderRadius: '0.1rem',
+    boxShadow: theme.palette.PodcastCardShadow,
   },
-  {
-    img: new URL('../../assets/images/img3.jpg', import.meta.url).href,
-    title: 'Sink',
+  ':hover': {
+    img: {
+      boxShadow: theme.palette.ResourceCardHoverShadow,
+      transform: 'scale(1.02)',
+    },
   },
-  {
-    img: new URL('../../assets/images/img5.jpg', import.meta.url).href,
-    title: 'Blinds',
-  },
-  {
-    img: new URL('../../assets/images/img6.jpg', import.meta.url).href,
-    title: 'Chairs',
-  },
-  {
-    img: new URL('../../assets/images/img7.jpg', import.meta.url).href,
-    title: 'Laptop',
-  },
-  {
-    img: new URL('../../assets/images/img2.jpg', import.meta.url).href,
-    title: 'Coffee',
-  },
-  {
-    img: new URL('../../assets/images/img8.jpg', import.meta.url).href,
-    title: 'Doors',
-  },
-  {
-    img: new URL('../../assets/images/img9.jpg', import.meta.url).href,
-    title: 'Coffee',
-  },
-  {
-    img: new URL('../../assets/images/img10.jpg', import.meta.url).href,
-    title: 'Storage',
-  },
-];
+}));
 
 const Gallery = () => {
-  const mobile = useMediaQuery('(max-width:769px)');
+  const tab = useMediaQuery('(min-width:1200px)');
+  const mobile = useMediaQuery('(min-width:700px)');
+  const colNum = (): number => {
+    let num = 1;
+    if (tab) num = 3;
+    else if (mobile) num = 2;
+    else num = 1;
+    return num;
+  };
   return (
     <Wrapper>
       <Title>Gallery</Title>
       <ImageList
         variant="masonry"
-        cols={mobile ? 1 : 3}
+        cols={colNum()}
         style={{ padding: '1rem' }}
         gap={20}
       >
-        {itemData.map((item) => {
+        {gallery.map((item) => {
           const image = new URL(item.img, import.meta.url).href;
           return (
-            <ImageListItem key={item.img}>
+            <ImageItem key={item.img}>
               <img
                 className="gallery"
                 src={`${image}?w=248&fit=crop&auto=format`}
@@ -89,7 +72,7 @@ const Gallery = () => {
                 alt={image}
                 loading="lazy"
               />
-            </ImageListItem>
+            </ImageItem>
           );
         })}
       </ImageList>

@@ -15,8 +15,9 @@ import BottomBar from './components/Navigations/BottomBar';
 const Structure = styled('div')({
   display: 'flex',
   flexDirection: 'row',
-  height: '100vh',
+  height: 'fit-content',
   width: '100vw',
+  overflowX: 'hidden',
   '@media (max-width: 767px)': {
     flexDirection: 'column',
   },
@@ -24,7 +25,7 @@ const Structure = styled('div')({
 
 const Page = styled('div')(({ theme }) => ({
   flex: 1,
-  height: 'fit-content',
+  height: '100%',
   background: theme.palette.pageBgColor,
   animation: 'gradient 15s ease infinite',
   padding: '1.5rem 0rem',

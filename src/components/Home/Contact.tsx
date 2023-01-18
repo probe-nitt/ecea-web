@@ -25,13 +25,13 @@ const ContactCard = styled('div')(({ theme }) => ({
   iframe: {
     width: '100%',
     height: '20rem',
-    '@media (max-width: 767px)': {
-      height: '16rem',
-    },
   },
-  '@media (max-width: 767px)': {
+  '@media (max-width: 1200px)': {
     margin: '4rem 0rem',
     padding: '2rem 2rem',
+    iframe: {
+      height: '16rem',
+    },
   },
 }));
 
@@ -55,7 +55,7 @@ const ContactDetailsWrapper = styled('div')(({ theme }) => ({
     color: theme.palette.titleColor,
     margin: '0.1rem 0',
   },
-  h4: {
+  p: {
     fontSize: '0.9rem',
     color: theme.palette.subTitleColor,
     margin: '0.1rem 0 2rem 0',
@@ -64,8 +64,8 @@ const ContactDetailsWrapper = styled('div')(({ theme }) => ({
     h2: {
       fontSize: '1.2rem',
     },
-    h4: {
-      fontSize: '0.75rem',
+    p: {
+      fontSize: '0.8rem',
     },
   },
 }));
@@ -114,7 +114,7 @@ const Contact = () => {
             <h2>
               {contact.key}
             </h2>
-            <h4>{contact.value}</h4>
+            <p>{contact.value}</p>
           </ContactDetailsWrapper>
         </ContactDetails>
       ))}

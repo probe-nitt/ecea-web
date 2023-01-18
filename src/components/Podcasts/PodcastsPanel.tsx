@@ -16,10 +16,12 @@ const TabGrid = styled('div')({
   padding: '3rem 0.5rem',
   display: 'grid',
   justifyContent: 'center',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(25rem, max-content))',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(28rem, max-content))',
   '@media (max-width: 767px)': {
+    display: 'flex',
+    flexDirection: 'column',
     padding: '1rem',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(21rem, max-content))',
+    justifyContent: 'center',
   },
 });
 

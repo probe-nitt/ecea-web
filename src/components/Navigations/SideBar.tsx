@@ -11,7 +11,7 @@ const NavBarContent = styled('div')(({ theme }) => ({
   width: '227px',
   background: theme.palette.navBarBgColor,
   boxShadow: theme.palette.navBarShadow,
-  height: '100vh',
+  height: '100%',
   position: 'fixed',
   overflowY: 'hidden',
   display: 'flex',

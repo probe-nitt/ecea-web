@@ -34,7 +34,7 @@ const DescriptionBox = styled('div')(({ theme }) => ({
     iframe: {
       width: '85%',
       borderRadius: '0.75rem',
-      aspectRatio: '3 / 2.4',
+      aspectRatio: '3 / 2',
       padding: '0.1rem',
     },
   },

@@ -9,17 +9,19 @@ const Card = styled('div')(({ theme }) => ({
   padding: '1.5rem 2.25rem 2.5rem 2.25rem',
   borderRadius: '0.4rem',
   alignItems: 'center',
-  backgroundColor: theme.palette.ResourceCardColor,
-  boxShadow: theme.palette.ResourceCardShadow,
+  backgroundColor: theme.palette.cardColor,
+  boxShadow: theme.palette.TeamCardShadow,
   margin: '0.75rem 1rem',
   img: {
     borderRadius: '50%',
     boxShadow: theme.palette.ResourceCardShadow,
     width: '11rem',
+    heigth: '11rem',
     margin: '2rem 0rem',
   },
   h3: {
     color: theme.palette.textColor,
+    textAlign: 'center',
     fontFamily: 'Josefin Sans Bold',
     margin: '0.1rem 0 0.15rem 0',
     fontWeight: 'bold',
@@ -52,15 +54,7 @@ const Card = styled('div')(({ theme }) => ({
     },
   },
   '@media (max-width: 767px)': {
-    img: {
-      margin: '1rem 0rem',
-    },
-    h3: {
-      margin: '0.5rem 0 0.1rem 0',
-    },
-    h5: {
-      margin: '0.1rem 0 1.2rem 0',
-    },
+    margin: '1rem 0',
   },
 }));
 

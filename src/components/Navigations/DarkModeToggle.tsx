@@ -8,6 +8,7 @@ const Navitem = styled('div')({
   margin: '0.35rem -0.65rem',
   '@media (max-width: 767px)': {
     margin: '0.1rem 0 0rem 0',
+    position: 'relative',
   },
 });
 
@@ -31,11 +32,16 @@ const NavitemLink = styled('div')(({ theme }) => ({
     gap: '0rem',
     padding: '0.2rem 0rem 0rem 0',
     margin: '0',
-    span: {
-      fontSize: '0.6rem',
-    },
+    float: 'right',
   },
 }));
+
+const NavitemTitle = styled('span')({
+  fontSize: '0.9rem',
+  '@media (max-width: 767px)': {
+    display: 'none',
+  },
+});
 
 const DarkModeSwitch = styled(Switch)(({ theme }) => ({
   width: 36,
@@ -47,7 +53,7 @@ const DarkModeSwitch = styled(Switch)(({ theme }) => ({
     transform: 'translate(5px,0px)',
     '&.Mui-checked': {
       color: theme.palette.textColor,
-      transform: 'translate(18px,-1px)',
+      transform: 'translate(18px,0px)',
       '& .MuiSwitch-thumb:before': {
         backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="10" width="12" viewBox="0 0 20 20"><path fill="${encodeURIComponent(
           theme.palette.navActiveColor,
@@ -103,7 +109,7 @@ const DarkModeToggle = () => {
         )}
           label=""
         />
-        <span>Darkmode</span>
+        <NavitemTitle>Darkmode</NavitemTitle>
       </NavitemLink>
     </Navitem>
   );

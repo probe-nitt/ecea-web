@@ -6,28 +6,32 @@ import { Podcast } from './types';
 const Card = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'row',
-  gap: '1rem',
-  width: '27rem',
+  gap: '0.3rem',
   margin: '1rem 1.2rem',
-  padding: '0.5rem',
+  position: 'relative',
+  height: '9rem',
+  maxHeight: '9rem',
+  padding: '0.4rem',
   borderRadius: '0.4rem',
   alignItems: 'center',
+  backgroundColor: theme.palette.cardColor,
   boxShadow: theme.palette.PodcastCardShadow,
   ':hover': {
+    boxShadow: theme.palette.ResourceCardHoverShadow,
     transform: 'scale(1.02)',
   },
   '@media (max-width: 767px)': {
-    width: '20rem',
-    margin: '1rem auto',
+    gap: '0.5rem',
+    margin: '1rem 0.1rem',
   },
 }));
 
 const PodcastImage = styled('img')({
   flex: 1,
-  borderRadius: '0.4rem',
-  height: '9rem',
+  borderRadius: '0.2rem',
+  height: '100%',
+  aspectRatio: '1/1',
   objectFit: 'fill',
-  aspectRatio: '0.95',
 });
 
 const PodcastContent = styled('div')(({ theme }) => ({
@@ -62,16 +66,17 @@ const PodcastContent = styled('div')(({ theme }) => ({
     },
   },
   '@media (max-width: 767px)': {
-    padding: '0rem',
+    padding: '0.5rem',
     h1: {
       margin: '0.2rem 0',
-      fontSize: '1rem',
+      fontSize: '1.2rem',
     },
     h5: {
-      fontSize: '0.7rem',
+      fontSize: '0.8rem',
     },
     div: {
-      gap: '0.5rem',
+      margin: '0.45rem 0.65rem 0',
+      flexDirection: 'row-reverse',
       h5: {
 
         fontSize: '0.75rem',
@@ -82,6 +87,11 @@ const PodcastContent = styled('div')(({ theme }) => ({
 
 const PodcastIcon = styled(Icon)(({ theme }) => ({
   padding: '0.4rem',
+  height: '1.5rem',
+  width: '1.5rem',
+  position: 'absolute',
+  bottom: 10,
+  right: 10,
   borderRadius: '50%',
   display: 'flex',
   justifyContent: 'center',
@@ -89,10 +99,6 @@ const PodcastIcon = styled(Icon)(({ theme }) => ({
   cursor: 'pointer',
   boxShadow: theme.palette.navBarShadow,
   background: theme.palette.titleColor,
-  '@media (max-width: 767px)': {
-    width: '2rem',
-    height: '2rem',
-  },
 }));
 
 interface PodcastProps {
@@ -114,7 +120,6 @@ const PodcastCard = ({ podcast }:PodcastProps) => {
           >
             <MdPlayArrow />
           </PodcastIcon>
-          <h5>Listen Now</h5>
 
         </div>
       </PodcastContent>

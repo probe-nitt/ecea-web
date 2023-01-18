@@ -37,6 +37,7 @@ const NavitemContent = styled('div')<NavindicatorProps>(({ theme, bg, isActive }
     gap: '0rem',
     padding: '0.2rem 0rem 0rem 0',
     margin: '0',
+    outlineStyle: 'none',
     span: {
       fontSize: '0.6rem',
     },
@@ -44,7 +45,7 @@ const NavitemContent = styled('div')<NavindicatorProps>(({ theme, bg, isActive }
     background: theme.palette.navInActiveBgColor,
     ':hover': {
       color: isActive ? theme.palette.navActiveColorMobile : theme.palette.navInActiveColorMobile,
-      background: theme.palette.navInActiveBgColor,
+      background: 'transparent',
     },
   },
 }));
