@@ -22,7 +22,7 @@ const Wrapper = styled('div')(({ theme }) => ({
   alignItems: 'center',
   margin: '4rem',
   borderRadius: '0.4rem',
-  background: theme.palette.sectionBgColor,
+  background: theme.palette.sectionBackgroundColor,
   '@media (max-width: 1200px)': {
     padding: '1rem',
     margin: '3rem 0rem',
@@ -32,11 +32,11 @@ const Wrapper = styled('div')(({ theme }) => ({
 const ImageItem = styled(ImageListItem)(({ theme }) => ({
   img: {
     borderRadius: '0.1rem',
-    boxShadow: theme.palette.PodcastCardShadow,
+    boxShadow: theme.palette.cardShadow,
   },
   ':hover': {
     img: {
-      boxShadow: theme.palette.ResourceCardHoverShadow,
+      boxShadow: theme.palette.cardHoverShadow,
       transform: 'scale(1.02)',
     },
   },
@@ -61,20 +61,17 @@ const Gallery = () => {
         style={{ padding: '1rem' }}
         gap={20}
       >
-        {gallery.map((item) => {
-          const image = new URL(item.img, import.meta.url).href;
-          return (
-            <ImageItem key={item.img}>
-              <img
-                className="gallery"
-                src={`${image}?w=248&fit=crop&auto=format`}
-                srcSet={`${image}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                alt={image}
-                loading="lazy"
-              />
-            </ImageItem>
-          );
-        })}
+        {gallery.map((item) => (
+          <ImageItem key={item.title}>
+            <img
+              className="gallery"
+              src={`${item.img}?w=248&fit=crop&auto=format`}
+              srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+              alt={item.img}
+              loading="lazy"
+            />
+          </ImageItem>
+        ))}
       </ImageList>
     </Wrapper>
   );

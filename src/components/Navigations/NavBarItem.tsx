@@ -21,15 +21,16 @@ const NavitemContent = styled('div')<NavindicatorProps>(({ theme, bg, isActive }
   padding: '0.7rem 0 0.7rem 1.2rem',
   margin: '0 0.5rem 0 0.25rem',
   cursor: 'pointer',
-  color: isActive ? theme.palette.navActiveColor : theme.palette.navInActiveColor,
-  background: isActive ? theme.palette.navDefaultBgColor : theme.palette.navInActiveBgColor,
+  color: isActive ? theme.palette.activeColor : theme.palette.inactiveColor,
+  background: isActive ? theme.palette.activeBackgroundColor
+    : theme.palette.inactiveBackgroundColor,
   borderRadius: '0.8rem',
   span: {
     fontSize: '0.9rem',
     marginTop: '0.2rem',
   },
   ':hover': {
-    color: theme.palette.navHoverColor,
+    color: theme.palette.hoverColor,
     background: bg,
   },
   '@media (max-width: 767px)': {
@@ -41,10 +42,10 @@ const NavitemContent = styled('div')<NavindicatorProps>(({ theme, bg, isActive }
     span: {
       fontSize: '0.6rem',
     },
-    color: isActive ? theme.palette.navActiveColorMobile : theme.palette.navInActiveColorMobile,
-    background: theme.palette.navInActiveBgColor,
+    color: isActive ? theme.palette.activeBackgroundColor : theme.palette.hintColor,
+    background: theme.palette.inactiveBackgroundColor,
     ':hover': {
-      color: isActive ? theme.palette.navActiveColorMobile : theme.palette.navInActiveColorMobile,
+      color: isActive ? theme.palette.activeBackgroundColor : theme.palette.hintColor,
       background: 'transparent',
     },
   },
@@ -60,7 +61,7 @@ const NavItemLink = ({
   }), []);
   return (
     <NavitemContent
-      bg={bgColor === undefined ? theme.palette.navHoverBgColor : bgColor}
+      bg={bgColor === undefined ? theme.palette.hoverBackgroundColor : bgColor}
       isActive={location.pathname === `/${path}`}
     >
       <IconContext.Provider

@@ -8,16 +8,17 @@ import { socialIcons } from '../../constants/socialicons';
 import DarkModeToggle from './DarkModeToggle';
 
 const NavBarContent = styled('div')(({ theme }) => ({
-  width: '227px',
-  background: theme.palette.navBarBgColor,
-  boxShadow: theme.palette.navBarShadow,
+  width: '225px',
+  background: theme.palette.barBackgroundColor,
+  boxShadow: theme.palette.tabShadow,
   height: '100%',
   position: 'fixed',
-  overflowY: 'hidden',
   display: 'flex',
-  zIndex: 1,
+  zIndex: 2,
   flexDirection: 'column',
   alignItems: 'flex-start',
+  overflowY: 'scroll',
+  marginBottom: 0,
   '@media (max-width: 767px)': {
     display: 'none',
   },
@@ -26,11 +27,11 @@ const NavBarContent = styled('div')(({ theme }) => ({
 const NavList = styled('ul')({
   width: '100%',
   padding: 0,
-  margin: '0.5rem 0 0.9rem 0',
+  margin: '0.75rem 0',
   position: 'static',
 });
 
-const Text = styled('h2')(({ theme }) => ({
+const Text = styled('h5')(({ theme }) => ({
   paddingLeft: '1.6rem',
   margin: 0,
   paddingTop: '1rem',
@@ -57,7 +58,7 @@ const SideBar = () => (
     </NavList>
     <Line />
     <Text>Follow us on</Text>
-    <NavList style={{ overflowY: 'scroll', marginBottom: 0 }}>
+    <NavList>
       {socialIcons.map((nav: NavitemProps) => <NavBarItem key={nav.path} {...nav} isHref />)}
     </NavList>
     <Box flex={1} />

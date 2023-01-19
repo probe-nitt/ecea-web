@@ -26,12 +26,13 @@ const Structure = styled('div')({
 const Page = styled('div')(({ theme }) => ({
   flex: 1,
   height: '100%',
-  background: theme.palette.pageBgColor,
+  background: theme.palette.backgroundColor,
   animation: 'gradient 15s ease infinite',
   padding: '1.5rem 0rem',
-  marginLeft: '226px',
+  marginLeft: '225px',
   '@media (max-width: 767px)': {
-    margin: '4.5rem 0',
+    margin: '0',
+    padding: '5.5rem 0 1rem 0',
   },
 }));
 

@@ -24,7 +24,7 @@ const Banner = styled('div')({
 });
 
 const Background = styled('img')({
-  height: '20rem',
+  height: '20.5rem',
   width: '100%',
   objectPosition: '20% 20%',
   objectFit: 'cover',

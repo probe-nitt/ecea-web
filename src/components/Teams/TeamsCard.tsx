@@ -10,11 +10,11 @@ const Card = styled('div')(({ theme }) => ({
   borderRadius: '0.4rem',
   alignItems: 'center',
   backgroundColor: theme.palette.cardColor,
-  boxShadow: theme.palette.TeamCardShadow,
+  boxShadow: theme.palette.cardShadow,
   margin: '0.75rem 1rem',
   img: {
     borderRadius: '50%',
-    boxShadow: theme.palette.ResourceCardShadow,
+    boxShadow: theme.palette.cardShadow,
     width: '11rem',
     heigth: '11rem',
     margin: '2rem 0rem',
@@ -36,20 +36,20 @@ const Card = styled('div')(({ theme }) => ({
   },
   '@media (min-width: 767px)': {
     ':hover': {
-      background: theme.palette.ResourceCardHover,
-      boxShadow: theme.palette.ResourceCardHoverShadow,
+      background: theme.palette.activeBackgroundColor,
+      boxShadow: theme.palette.cardHoverShadow,
       h5: {
-        color: theme.palette.cardTextHover,
+        color: theme.palette.sectionBackgroundColor,
       },
       h3: {
-        color: theme.palette.cardTextHover,
+        color: theme.palette.sectionBackgroundColor,
       },
       img: {
         borderColor: '#0000',
-        boxShadow: theme.palette.navBarShadow,
+        boxShadow: theme.palette.cardShadow,
       },
       span: {
-        color: theme.palette.cardTextHover,
+        color: theme.palette.sectionBackgroundColor,
       },
     },
   },

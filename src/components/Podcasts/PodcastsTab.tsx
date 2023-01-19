@@ -12,26 +12,30 @@ const tabs = [
 const TabList = styled('div')(({ theme }) => ({
   display: 'flex',
   alignSelf: 'center',
-  boxShadow: theme.palette.PodcastTabShadow,
+  boxShadow: theme.palette.barShadow,
   margin: 'auto',
   alignItems: 'center',
   listStyleType: 'none',
   width: '50%',
   borderRadius: '0.8rem',
-  '@media (max-width: 767px)': {
-    width: '92%',
+  '@media (max-width: 960px)': {
+    width: '75%',
+  },
+  '@media (max-width: 500px)': {
+    width: '90%',
   },
 }));
 
 const TabItem = styled('div')<TabPanelProps>(({ theme, index, value }) => ({
-  color: index === value ? theme.palette.navActiveColor : theme.palette.subTitleColor,
+  color: index === value ? theme.palette.activeColor : theme.palette.subTitleColor,
   fontSize: '0.8rem',
   cursor: 'pointer',
   flex: 1,
   textAlign: 'center',
   padding: '0.75rem 0rem',
   margin: `0rem ${index === tabs[2] ? '0rem' : '0.05rem'} 0rem ${index === tabs[0] ? '0rem' : '0.05rem'}`,
-  background: index !== value ? theme.palette.navHoverBgColor : theme.palette.navDefaultBgColor,
+  background: index !== value ? theme.palette.sectionBackgroundColor
+    : theme.palette.activeBackgroundColor,
   borderRadius: `${index === tabs[0] ? '0.8rem' : 0}  ${index === tabs[2] ? '0.8rem' : 0}  ${index === tabs[2] ? '0.8rem' : 0} ${index === tabs[0] ? '0.8rem' : 0}`,
   '@media (max-width: 767px)': {
     fontSize: '0.65rem',

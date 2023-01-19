@@ -211,39 +211,47 @@ export const podcasts = [
 
 export const gallery = [
   {
-    img: new URL('../assets/images/img1.jpg', import.meta.url).href,
+    img: 'https://ecea.nitt.edu/media/images/69377264_1479621862190404_8801941440520257536_n.original_snqKZh3.jpg',
+    title: 'Red',
+  },
+  {
+    img: 'https://ecea.nitt.edu/media/images/51746166_1318524131633512_7605853899680907264_n.original.jpg',
     title: 'Bed',
   },
   {
-    img: new URL('../assets/images/img3.jpg', import.meta.url).href,
+    img: 'https://ecea.nitt.edu/media/images/web.original.jpg',
     title: 'Sink',
   },
   {
-    img: new URL('../assets/images/img5.jpg', import.meta.url).href,
+    img: 'https://ecea.nitt.edu/media/images/Inaug.original.jpg',
     title: 'Blinds',
   },
   {
-    img: new URL('../assets/images/img6.jpg', import.meta.url).href,
+    img: 'https://ecea.nitt.edu/media/images/69709890_1479622018857055_1794203531134107648_n.original.jpg',
     title: 'Chairs',
   },
   {
-    img: new URL('../assets/images/img7.jpg', import.meta.url).href,
+    img: 'https://ecea.nitt.edu/media/images/DSC06233_JInsNXE.original.jpg',
     title: 'Laptop',
   },
   {
-    img: new URL('../assets/images/img2.jpg', import.meta.url).href,
+    img: 'https://ecea.nitt.edu/media/images/71279350_972798179735507_1331884297961133757_n.original.jpg',
     title: 'Coffee',
   },
   {
-    img: new URL('../assets/images/img8.jpg', import.meta.url).href,
+    img: 'https://ecea.nitt.edu/media/images/69100590_2376834239302559_2780652677596783894_n.original.jpg',
     title: 'Doors',
   },
   {
-    img: new URL('../assets/images/img9.jpg', import.meta.url).href,
+    img: 'https://ecea.nitt.edu/media/images/40586142_1205848026234457_6472816388552523776_n.original_navFK2D.jpg',
     title: 'Coffee',
   },
   {
-    img: new URL('../assets/images/img10.jpg', import.meta.url).href,
+    img: 'https://ecea.nitt.edu/media/images/69040771_1479621728857084_7563776405729705984_n.original.jpg',
     title: 'Storage',
+  },
+  {
+    img: ' https://ecea.nitt.edu/media/images/40527510_1205848272901099_5561503463113752576_n.original.jpg',
+    title: 'SAA',
   },
 ];

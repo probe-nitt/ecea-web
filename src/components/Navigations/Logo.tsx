@@ -2,9 +2,9 @@ import { useTheme } from '@mui/material';
 import { styled } from '@mui/system';
 
 const LogoImage = styled('img')({
-  height: '3.5rem',
+  height: '3.4rem',
   objectFit: 'cover',
-  padding: '1.2rem',
+  padding: '1.2rem 1rem',
   '@media (max-width: 767px)': {
     height: '3rem',
     padding: '1rem',

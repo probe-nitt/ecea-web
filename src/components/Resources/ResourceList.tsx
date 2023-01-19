@@ -8,10 +8,10 @@ const Content = styled('div')({
   },
 });
 
-const Title = styled('h4')(({ theme }) => ({
+const Title = styled('h6')(({ theme }) => ({
   margin: '5rem 1rem 1.5rem 2rem',
   fontWeight: 900,
-  fontSize: '1.5rem',
+  fontSize: '1.4rem',
   color: theme.palette.subTitleColor,
   '@media (max-width: 767px)': {
     fontSize: '1.3rem',
@@ -23,7 +23,7 @@ const Row = styled('div')(({ theme }) => ({
   margin: '2rem 0.5rem',
   borderRadius: '0.4rem',
   padding: '1.5rem 0.5rem',
-  background: theme.palette.sectionBgColor,
+  background: theme.palette.sectionBackgroundColor,
   alignItems: 'stretch',
   display: 'flex',
   flexDirection: 'row',

@@ -1,13 +1,12 @@
 import { styled } from '@mui/system';
 import ResourcesList from '../components/Resources/ResourceList';
-// import SearchBar from '../components/Resources/SearchBar';
 import { resources } from '../constants/dummy';
 
 const Wrapper = styled('div')(({ theme }) => ({
-  padding: '2rem 1.5rem',
+  padding: '1rem 1.5rem',
   h1: {
     color: theme.palette.titleColor,
-    fontSize: '2.5rem',
+    fontSize: '2.75rem',
     textAlign: 'center',
     marginBottom: '4rem',
   },
@@ -19,7 +18,6 @@ const Wrapper = styled('div')(({ theme }) => ({
 const Resources = () => (
   <Wrapper>
     <h1>Core Resources</h1>
-    {/* <SearchBar /> */}
     <ResourcesList resources={resources} />
   </Wrapper>
 );

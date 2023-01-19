@@ -20,7 +20,7 @@ const ContactCard = styled('div')(({ theme }) => ({
   justifyContent: 'center',
   borderRadius: '0.2rem',
   flexDirection: 'column',
-  background: theme.palette.sectionBgColor,
+  background: theme.palette.sectionBackgroundColor,
   padding: '2rem',
   iframe: {
     width: '100%',
@@ -105,7 +105,7 @@ const Contact = () => {
       {contacts.map((contact) => (
         <ContactDetails key={contact.key}>
           <ContactIcon style={{
-            color: theme.palette.navBarBgColor,
+            color: theme.palette.backgroundColor,
           }}
           >
             {contact.icon}

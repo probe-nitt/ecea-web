@@ -4,7 +4,7 @@ import PodcastCard from './PodcastsCard';
 import { Podcast, TabPanelProps } from './types';
 
 const Content = styled('div')({
-  margin: '1rem',
+  margin: '1rem 0.5rem',
   '@media (max-width: 767px)': {
     margin: '0rem',
   },
@@ -16,7 +16,7 @@ const TabGrid = styled('div')({
   padding: '3rem 0.5rem',
   display: 'grid',
   justifyContent: 'center',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(28rem, max-content))',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(29rem, max-content))',
   '@media (max-width: 767px)': {
     display: 'flex',
     flexDirection: 'column',

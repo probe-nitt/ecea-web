@@ -9,18 +9,19 @@ const Card = styled('div')(({ theme }) => ({
   gap: '0.3rem',
   margin: '1rem 1.2rem',
   position: 'relative',
-  height: '9rem',
-  maxHeight: '9rem',
+  height: '10rem',
+  width: '28rem',
   padding: '0.4rem',
   borderRadius: '0.4rem',
   alignItems: 'center',
   backgroundColor: theme.palette.cardColor,
-  boxShadow: theme.palette.PodcastCardShadow,
+  boxShadow: theme.palette.cardShadow,
   ':hover': {
-    boxShadow: theme.palette.ResourceCardHoverShadow,
+    boxShadow: theme.palette.cardHoverShadow,
     transform: 'scale(1.02)',
   },
   '@media (max-width: 767px)': {
+    width: 'auto',
     gap: '0.5rem',
     margin: '1rem 0.1rem',
   },
@@ -97,7 +98,7 @@ const PodcastIcon = styled(Icon)(({ theme }) => ({
   justifyContent: 'center',
   alignItems: 'center',
   cursor: 'pointer',
-  boxShadow: theme.palette.navBarShadow,
+  boxShadow: theme.palette.tabShadow,
   background: theme.palette.titleColor,
 }));
 
@@ -115,7 +116,7 @@ const PodcastCard = ({ podcast }:PodcastProps) => {
         <h5>{podcast.presenterDescription}</h5>
         <div>
           <PodcastIcon style={{
-            color: theme.palette.navBarBgColor,
+            color: theme.palette.backgroundColor,
           }}
           >
             <MdPlayArrow />

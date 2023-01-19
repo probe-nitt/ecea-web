@@ -12,11 +12,11 @@ const Card = styled('div')(({ theme }) => ({
   flexGrow: 0,
   flexShrink: 0,
   backgroundColor: theme.palette.cardColor,
-  boxShadow: theme.palette.ResourceCardShadow,
+  boxShadow: theme.palette.cardShadow,
   margin: '0.75rem 1rem',
   cursor: 'pointer',
   ':hover': {
-    boxShadow: theme.palette.ResourceCardHoverShadow,
+    boxShadow: theme.palette.cardHoverShadow,
     transform: 'scale(1.02)',
   },
   '@media (max-width: 767px)': {
