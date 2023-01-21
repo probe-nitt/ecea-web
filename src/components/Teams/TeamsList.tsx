@@ -77,7 +77,7 @@ const TeamsList = ({ teams }:TeamProps) => {
         alignItems="center"
         spacing={1}
         sx={{
-          maxWidth: { xs: '75%', md: '90%' },
+          maxWidth: '90%',
         }}
       >
         {teams.map((member:Team) => (

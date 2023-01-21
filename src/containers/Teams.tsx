@@ -4,13 +4,13 @@ import { teams } from '../constants/dummy';
 
 const Layout = styled('div')(({ theme }) => ({
   display: 'flex',
-  padding: '2rem 0.5rem',
+  padding: '1rem 0.5rem',
   flexDirection: 'column',
   h1: {
     color: theme.palette.titleColor,
     textAlign: 'center',
-    paddingBottom: '0.75rem',
-    fontSize: '2.5rem',
+    paddingBottom: '1rem',
+    fontSize: '2.7rem',
   },
   '@media (max-width: 767px)': {
     padding: '2rem 0rem',

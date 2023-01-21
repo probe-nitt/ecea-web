@@ -6,7 +6,7 @@ const Wrapper = styled('div')(({ theme }) => ({
   padding: '1rem 1.5rem',
   h1: {
     color: theme.palette.titleColor,
-    fontSize: '2.75rem',
+    fontSize: '2.5rem',
     textAlign: 'center',
     marginBottom: '4rem',
   },

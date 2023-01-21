@@ -6,24 +6,24 @@ import { Podcast } from './types';
 const Card = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'row',
-  gap: '0.3rem',
+  alignSelf: 'center',
+  gap: '0.1rem',
   margin: '1rem 1.2rem',
   position: 'relative',
-  height: '10rem',
-  width: '28rem',
-  padding: '0.4rem',
+  height: '8rem',
+  padding: '0.25rem',
   borderRadius: '0.4rem',
   alignItems: 'center',
-  backgroundColor: theme.palette.cardColor,
   boxShadow: theme.palette.cardShadow,
   ':hover': {
     boxShadow: theme.palette.cardHoverShadow,
     transform: 'scale(1.02)',
   },
-  '@media (max-width: 767px)': {
-    width: 'auto',
+  '@media (max-width: 1000px)': {
+    width: '100%',
+    height: '8.5rem',
     gap: '0.5rem',
-    margin: '1rem 0.1rem',
+    margin: '1rem 0',
   },
 }));
 
@@ -45,13 +45,13 @@ const PodcastContent = styled('div')(({ theme }) => ({
   h1: {
     textAlign: 'start',
     padding: 0,
-    margin: '0.5rem 0',
-    fontSize: '1.4rem',
+    margin: '0.5rem 0 0.2rem 0',
+    fontSize: '1rem',
   },
   h5: {
     textAlign: 'start',
     margin: '0rem',
-    fontSize: '0.8rem',
+    fontSize: '0.6rem',
     color: theme.palette.textColor,
   },
   div: {
@@ -70,10 +70,10 @@ const PodcastContent = styled('div')(({ theme }) => ({
     padding: '0.5rem',
     h1: {
       margin: '0.2rem 0',
-      fontSize: '1.2rem',
+      fontSize: '0.9rem',
     },
     h5: {
-      fontSize: '0.8rem',
+      fontSize: '0.7rem',
     },
     div: {
       margin: '0.45rem 0.65rem 0',

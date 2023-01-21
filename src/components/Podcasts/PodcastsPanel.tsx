@@ -3,20 +3,13 @@ import { podcasts } from '../../constants/dummy';
 import PodcastCard from './PodcastsCard';
 import { Podcast, TabPanelProps } from './types';
 
-const Content = styled('div')({
-  margin: '1rem 0.5rem',
-  '@media (max-width: 767px)': {
-    margin: '0rem',
-  },
-});
-
 const TabGrid = styled('div')({
-  margin: '1rem 0.5rem',
+  margin: '0rem 0.5rem',
   borderRadius: '0.4rem',
-  padding: '3rem 0.5rem',
+  padding: '2.5rem 0rem',
   display: 'grid',
   justifyContent: 'center',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(29rem, max-content))',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(21.5rem, max-content))',
   '@media (max-width: 767px)': {
     display: 'flex',
     flexDirection: 'column',
@@ -26,7 +19,7 @@ const TabGrid = styled('div')({
 });
 
 const PodcastsPanel = ({ value, index }: TabPanelProps) => (
-  <Content
+  <div
     hidden={value !== index}
     id={`simple-tabpanel-${index}`}
     aria-labelledby={`simple-tab-${index}`}
@@ -38,7 +31,7 @@ const PodcastsPanel = ({ value, index }: TabPanelProps) => (
         ))}
       </TabGrid>
     )}
-  </Content>
+  </div>
 );
 
 export default PodcastsPanel;

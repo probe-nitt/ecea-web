@@ -13,7 +13,7 @@ const AppBarContent = styled('div')(({ theme }) => ({
   zIndex: 2,
   backgroundColor: theme.palette.barBackgroundColor,
   position: 'fixed',
-  boxShadow: theme.palette.tabsShadow,
+  boxShadow: theme.palette.tabShadow,
   alignItems: 'flex-start',
   '@media (max-width: 767px)': {
     display: 'flex',

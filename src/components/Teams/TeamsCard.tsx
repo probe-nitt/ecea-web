@@ -9,7 +9,6 @@ const Card = styled('div')(({ theme }) => ({
   padding: '1.5rem 2.25rem 2.5rem 2.25rem',
   borderRadius: '0.4rem',
   alignItems: 'center',
-  backgroundColor: theme.palette.cardColor,
   boxShadow: theme.palette.cardShadow,
   margin: '0.75rem 1rem',
   img: {
@@ -54,7 +53,9 @@ const Card = styled('div')(({ theme }) => ({
     },
   },
   '@media (max-width: 767px)': {
+    width: '100%',
     margin: '1rem 0',
+    padding: '2rem 2.25rem 2.5rem 2.25rem',
   },
 }));
 
