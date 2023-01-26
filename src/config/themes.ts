@@ -32,6 +32,9 @@ declare module '@mui/material/styles/CreatePalette' {
     ResourceCardHoverShadow:string;
     PodcastTabShadow:string;
     PodcastCardShadow:string;
+    LoginTabHoverShadow:string;
+    DLoginColor:string;
+    DLoginHoverShadow:string;
   }
   interface PaletteOptions {
     textColor: string;
@@ -63,6 +66,9 @@ declare module '@mui/material/styles/CreatePalette' {
     ResourceCardHoverShadow:string;
     PodcastTabShadow:string;
     PodcastCardShadow:string;
+    LoginTabHoverShadow:string;
+    DLoginColor:string;
+    DLoginHoverShadow:string;
   }
 }
 
@@ -98,6 +104,9 @@ export const darkTheme = createTheme({
     ResourceCardHoverShadow: '0rem 0rem 1rem 0rem #6AE1DD',
     PodcastTabShadow: '0rem 0rem 0.3rem 0rem #777',
     PodcastCardShadow: '0rem 0rem 0.3rem 0rem #0088A3',
+    LoginTabHoverShadow: '0rem 0rem 0.8rem 0rem #6AE1DD',
+    DLoginColor: '#808080',
+    DLoginHoverShadow: '0rem 0rem 0.8rem 0rem #808080',
   },
 });
 
@@ -117,6 +126,7 @@ export const lightTheme = createTheme({
     navInActiveColor: '#434343',
     navDefaultBgColor: '#006Fdd',
     navInActiveBgColor: 'transparent',
+    DLoginColor: '#808080',
     navActiveColorMobile: '#006FFF',
     navInActiveColorMobile: '#777',
     navBarBgColor: '#ffffff',
@@ -133,6 +143,8 @@ export const lightTheme = createTheme({
     ResourceCardHoverShadow: '0rem 0rem 1rem 0rem #007fea',
     PodcastTabShadow: '0rem 0rem 0.3rem 0rem #555555',
     PodcastCardShadow: '0rem 0rem 0.35rem 0rem #007fea',
+    LoginTabHoverShadow: '0rem 0rem 0.8rem 0rem #007fea',
+    DLoginHoverShadow: '0rem 0rem 0.8rem 0rem #808080',
   },
 
 });
