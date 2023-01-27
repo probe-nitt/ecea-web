@@ -14,6 +14,7 @@ const Card = styled('div')(({ theme }) => ({
   padding: '0.25rem',
   borderRadius: '0.4rem',
   alignItems: 'center',
+  background: theme.palette.cardColor,
   boxShadow: theme.palette.cardShadow,
   ':hover': {
     boxShadow: theme.palette.cardHoverShadow,

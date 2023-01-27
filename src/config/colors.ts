@@ -42,8 +42,8 @@ declare module '@mui/material/styles/CreatePalette' {
 }
 
 export const darkPalette = {
-  backgroundColor: '#252525',
-  sectionBackgroundColor: '#1C1C1C',
+  backgroundColor: '#151515',
+  sectionBackgroundColor: '#1E1E1E',
   barBackgroundColor: '#151515',
   textColor: '#FFFFFF',
   titleColor: '#6AE1DD',
@@ -56,8 +56,8 @@ export const darkPalette = {
   inactiveBackgroundColor: 'transparent',
   hoverBackgroundColor: '#0C7DB139',
   hoverColor: '#FFFFFF',
-  cardColor: '#222222',
-  cardShadow: '0rem 0rem 0.4rem 0rem #0088A3',
+  cardColor: '#111111',
+  cardShadow: '0rem 0rem 0.3rem 0rem #0088A3',
   cardHoverShadow: '0rem 0rem 0.6rem 0rem #0088A3',
   tabShadow: '0rem 0rem 0.15rem 0rem #777777',
   barShadow: '0rem 0rem 0.25rem 0rem #777777',
