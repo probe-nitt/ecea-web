@@ -186,26 +186,31 @@ export const podcasts = [
     image: 'https://ecea.nitt.edu/media/images/episode-1.original.png',
     presenterName: 'Dr.Sudeb Dasgupta',
     presenterDescription: 'HOD, ECE, IIT Roorkee',
+    audioSrc:"src/assets/audios/a.mp3"
   },
   {
     image: 'https://ecea.nitt.edu/media/images/episode-2.original.jpg',
     presenterName: 'Dr.Chandani Anand',
     presenterDescription: 'Staff Engineer(CMOS Image Sensors)',
+    audioSrc:"src/assets/audios/b.mp3"
   },
   {
     image: 'https://ecea.nitt.edu/media/images/episode-3.original.png',
     presenterName: 'Dr. Shilpa Pandit',
     presenterDescription: 'Co-Founder, Dreampath',
+    audioSrc:"src/assets/audios/c.mp3"
   },
   {
     image: 'https://ecea.nitt.edu/media/images/episode-4.original.jpg',
     presenterName: 'Mr. Sai Kamal',
     presenterDescription: 'MS in ECE, Purdue University',
+    audioSrc:"src/assets/audios/d.mp3"
   },
   {
     image: 'https://ecea.nitt.edu/media/images/career_path_arvind.original.jpg',
     presenterName: 'Arvind Balaji Narayan',
     presenterDescription: 'MS in EEE, Arvind Balaji Narayan',
+    audioSrc:"src/assets/audios/e.mp3"
   },
 ];
 
