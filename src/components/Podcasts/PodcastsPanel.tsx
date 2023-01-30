@@ -26,8 +26,8 @@ const PodcastsPanel = ({ value, index }: TabPanelProps) => (
   >
     {value === index && (
       <TabGrid>
-        {podcasts.map((podcast:Podcast,idx:number) => (
-          <PodcastCard podcast={podcast} podcasts={podcasts} index={idx}/>
+        {podcasts.map((podcast:Podcast, idx:number) => (
+          <PodcastCard podcast={podcast} podcasts={podcasts} index={idx} />
         ))}
       </TabGrid>
     )}
