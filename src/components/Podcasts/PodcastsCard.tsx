@@ -1,7 +1,9 @@
 import { Icon } from '@mui/material';
 import { styled, useTheme } from '@mui/system';
 import { MdPlayArrow } from 'react-icons/md';
+import { useState } from 'react';
 import { Podcast } from './types';
+import AudioPlayer from './AudioPlayer';
 
 const Card = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -15,9 +17,11 @@ const Card = styled('div')(({ theme }) => ({
   borderRadius: '0.4rem',
   alignItems: 'center',
   boxShadow: theme.palette.cardShadow,
+  transition: '0.3s',
   ':hover': {
     boxShadow: theme.palette.cardHoverShadow,
     transform: 'scale(1.02)',
+    transition: '0.3s',
   },
   '@media (max-width: 1000px)': {
     width: '100%',
@@ -79,7 +83,6 @@ const PodcastContent = styled('div')(({ theme }) => ({
       margin: '0.45rem 0.65rem 0',
       flexDirection: 'row-reverse',
       h5: {
-
         fontSize: '0.75rem',
       },
     },
@@ -103,11 +106,24 @@ const PodcastIcon = styled(Icon)(({ theme }) => ({
 }));
 
 interface PodcastProps {
-  podcast: Podcast
+  podcast: Podcast;
+  podcasts: Podcast[];
+  index: number;
 }
 
-const PodcastCard = ({ podcast }:PodcastProps) => {
+const PodcastCard = ({ podcast, podcasts, index }: PodcastProps) => {
   const theme = useTheme();
+  const [playerIsOpen, setPlayerIsOpen] = useState<boolean>(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [podcastIndex, setPodcastIndex] = useState<number>(index);
+
+  // Functions
+  const openPlayer = () => {
+    setPlayerIsOpen(true);
+    setIsPlaying(true);
+    setPodcastIndex(index);
+  };
+
   return (
     <Card>
       <PodcastImage alt={podcast.image} src={podcast.image} />
@@ -115,15 +131,25 @@ const PodcastCard = ({ podcast }:PodcastProps) => {
         <h1>{podcast.presenterName}</h1>
         <h5>{podcast.presenterDescription}</h5>
         <div>
-          <PodcastIcon style={{
-            color: theme.palette.backgroundColor,
-          }}
+          <PodcastIcon
+            onClick={openPlayer}
+            style={{
+              color: theme.palette.backgroundColor,
+            }}
           >
             <MdPlayArrow />
           </PodcastIcon>
-
         </div>
       </PodcastContent>
+      <AudioPlayer
+        playerIsOpen={playerIsOpen}
+        setPlayerIsOpen={setPlayerIsOpen}
+        podcasts={podcasts}
+        isPlaying={isPlaying}
+        setIsPlaying={setIsPlaying}
+        podcastIndex={podcastIndex}
+        setPodcastIndex={setPodcastIndex}
+      />
     </Card>
   );
 };

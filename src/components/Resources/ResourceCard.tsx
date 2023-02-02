@@ -15,9 +15,11 @@ const Card = styled('div')(({ theme }) => ({
   boxShadow: theme.palette.cardShadow,
   margin: '0.75rem 1rem',
   cursor: 'pointer',
+  transition: '0.3s',
   ':hover': {
     boxShadow: theme.palette.cardHoverShadow,
     transform: 'scale(1.02)',
+    transition: '0.3s',
   },
   '@media (max-width: 767px)': {
     margin: '1rem',
