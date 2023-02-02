@@ -17,9 +17,11 @@ const Card = styled('div')(({ theme }) => ({
   borderRadius: '0.4rem',
   alignItems: 'center',
   boxShadow: theme.palette.cardShadow,
+  transition: '0.3s',
   ':hover': {
     boxShadow: theme.palette.cardHoverShadow,
     transform: 'scale(1.02)',
+    transition: '0.3s',
   },
   '@media (max-width: 1000px)': {
     width: '100%',
