@@ -30,8 +30,11 @@ const Page = styled('div')(({ theme }) => ({
   animation: 'gradient 15s ease infinite',
   padding: '1.5rem 0rem',
   marginLeft: '225px',
+  minHeight: '100vh',
+  width: 'calc(100vw - 225px)',
   '@media (max-width: 767px)': {
     margin: '1rem 0rem',
+    width: '100%',
     padding: '5.5rem 0 3rem 0',
   },
 }));

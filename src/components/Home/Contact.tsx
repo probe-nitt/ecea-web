@@ -50,8 +50,9 @@ const ContactDetailsWrapper = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   width: '100%',
-  h2: {
-    fontSize: '1.4rem',
+  h6: {
+    fontSize: '1.2rem',
+    fontWeight: 'bold',
     color: theme.palette.titleColor,
     margin: '0.1rem 0',
   },
@@ -61,8 +62,8 @@ const ContactDetailsWrapper = styled('div')(({ theme }) => ({
     margin: '0.1rem 0 2rem 0',
   },
   '@media (max-width: 767px)': {
-    h2: {
-      fontSize: '1.2rem',
+    h6: {
+      fontSize: '1rem',
     },
     p: {
       fontSize: '0.8rem',
@@ -83,7 +84,7 @@ const contacts = [
   {
     icon: <MdEmail />,
     key: 'Email',
-    value: 'probe@nitt.edu',
+    value: 'ecea@nitt.edu',
   },
   {
     icon: <MdCall />,
@@ -111,9 +112,9 @@ const Contact = () => {
             {contact.icon}
           </ContactIcon>
           <ContactDetailsWrapper>
-            <h2>
+            <h6>
               {contact.key}
-            </h2>
+            </h6>
             <p>{contact.value}</p>
           </ContactDetailsWrapper>
         </ContactDetails>

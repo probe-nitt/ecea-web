@@ -19,7 +19,7 @@ const NavitemLink = styled('div')(({ theme }) => ({
   alignItems: 'center',
   gap: '0.5rem',
   padding: '0.2rem 0 0.7rem 1.2rem',
-  margin: '0 0.2rem 0 0.25rem',
+  margin: '0 0.3rem 0 0.45rem',
   cursor: 'pointer',
   color: theme.palette.inactiveColor,
   background: theme.palette.inactiveBackgroundColor,
@@ -51,12 +51,16 @@ const DarkModeSwitch = styled('button')(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  background: theme.palette.activeBackgroundColor,
+  color: theme.palette.activeBackgroundColor,
+  background: 'transparent',
   boxShadow: theme.palette.tabShadow,
-  color: theme.palette.activeColor,
   borderRadius: '50%',
   border: '1px solid transparent',
   cursor: 'pointer',
+  '@media (max-width: 767px)': {
+    color: theme.palette.activeColor,
+    background: theme.palette.activeBackgroundColor,
+  },
 }));
 
 const DarkModeToggle = () => {
@@ -74,8 +78,8 @@ const DarkModeToggle = () => {
           {theme !== 'light' ? <MdLightMode /> : <MdDarkMode />}
         </DarkModeSwitch>
         <NavitemTitle>
-          {theme === 'light' ? 'Dark' : 'Light'}
-          mode
+          {theme === 'light' ? 'Dark ' : 'Light '}
+          Mode
         </NavitemTitle>
       </NavitemLink>
     </Navitem>

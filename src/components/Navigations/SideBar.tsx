@@ -1,11 +1,12 @@
-import { Box, styled } from '@mui/system';
+import { styled } from '@mui/system';
 import { Divider } from '@mui/material';
+import { SlLogin } from 'react-icons/sl';
 import Logo from './Logo';
-import navigations from '../../constants/navigations';
+import { navigations } from '../../constants/navigations';
 import { NavitemProps } from './types';
 import NavBarItem from './NavBarItem';
-import { socialIcons } from '../../constants/socialicons';
 import DarkModeToggle from './DarkModeToggle';
+import { socialIcons } from '../../constants/socialicons';
 
 const NavBarContent = styled('div')(({ theme }) => ({
   width: '225px',
@@ -27,14 +28,13 @@ const NavBarContent = styled('div')(({ theme }) => ({
 const NavList = styled('ul')({
   width: '100%',
   padding: 0,
-  margin: '0.75rem 0',
+  margin: '0.65rem 0',
   position: 'static',
 });
 
 const Text = styled('h5')(({ theme }) => ({
-  paddingLeft: '1.6rem',
+  padding: '1rem 0rem 0.1rem 1.2rem',
   margin: 0,
-  paddingTop: '1rem',
   fontSize: '0.95rem',
   color: theme.palette.hintColor,
   fontWeight: 500,
@@ -43,7 +43,7 @@ const Text = styled('h5')(({ theme }) => ({
 export const Line = () => (
   <Divider sx={{
     borderColor: 'dividerColor',
-    boxShadow: '0 0 0.5rem 0 rgb(100, 100, 100)',
+    boxShadow: '0 0 0rem 0 rgb(150, 150, 150)',
     width: '100%',
   }}
   />
@@ -57,13 +57,16 @@ const SideBar = () => (
       {navigations.map((nav: NavitemProps) => <NavBarItem key={nav.path} {...nav} />)}
     </NavList>
     <Line />
-    <Text>Follow us on</Text>
+    <Text>General</Text>
     <NavList>
-      {socialIcons.map((nav: NavitemProps) => <NavBarItem key={nav.path} {...nav} isHref />)}
+      <NavBarItem key="login" label="Login" element={<SlLogin />} path="/login" />
+      <DarkModeToggle />
     </NavList>
-    <Box flex={1} />
     <Line />
-    <DarkModeToggle />
+    <Text>Follow Us On</Text>
+    <NavList>
+      {socialIcons.map((nav: NavitemProps) => <NavBarItem key={nav.path} {...nav} />)}
+    </NavList>
   </NavBarContent>
 );
 

@@ -2,31 +2,34 @@ import { styled } from '@mui/system';
 import { Subject } from './types';
 
 const Card = styled('div')(({ theme }) => ({
-  display: 'flex',
-  flexDirection: 'column',
-  width: 'fit-content',
+  display: 'inline-block',
   fontWeight: 900,
   padding: '0.8rem',
   borderRadius: '0.5rem',
-  flexBasis: '14rem',
-  flexGrow: 0,
-  flexShrink: 0,
   background: theme.palette.cardColor,
   boxShadow: theme.palette.cardShadow,
-  margin: '0.75rem 1rem',
+  margin: '0.75rem 0.75rem',
   cursor: 'pointer',
+  div: {
+    display: 'flex',
+    flexDirection: 'column',
+    width: '15rem',
+    height: '16rem',
+  },
   ':hover': {
     boxShadow: theme.palette.cardHoverShadow,
     transform: 'scale(1.02)',
   },
   '@media (max-width: 767px)': {
-    margin: '1rem',
+    margin: '1rem 0.75rem',
   },
 }));
 
 const Image = styled('img')({
-  aspectRatio: '1/2',
-  height: '12.5rem',
+  width: '100%',
+  flex: 1,
+  height: '10rem',
+  aspectRatio: '1/1',
   borderRadius: '0.5rem',
 
 });
@@ -48,8 +51,10 @@ interface SubjectProps {
 }
 const ResourceCard = ({ subject }:SubjectProps) => (
   <Card>
-    <Image src={subject.subjectImage} />
-    <Title>{subject.subjectName}</Title>
+    <div>
+      <Image src={subject.subjectImage} />
+      <Title>{subject.subjectName}</Title>
+    </div>
   </Card>
 );
 

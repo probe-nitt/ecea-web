@@ -4,6 +4,7 @@ import { resources } from '../constants/dummy';
 
 const Wrapper = styled('div')(({ theme }) => ({
   padding: '1rem 1.5rem',
+  maxWidth: '100%',
   h1: {
     color: theme.palette.titleColor,
     fontSize: '2.5rem',

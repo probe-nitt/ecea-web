@@ -29,7 +29,7 @@ const Card = styled('div')(({ theme }) => ({
 }));
 
 const PodcastImage = styled('img')({
-  flex: 1,
+  width: '35%',
   borderRadius: '0.2rem',
   height: '100%',
   aspectRatio: '1/1',
@@ -47,7 +47,7 @@ const PodcastContent = styled('div')(({ theme }) => ({
     textAlign: 'start',
     padding: 0,
     margin: '0.5rem 0 0.2rem 0',
-    fontSize: '1rem',
+    fontSize: '0.88rem',
   },
   h5: {
     textAlign: 'start',

@@ -1,5 +1,5 @@
 import { styled } from '@mui/system';
-import navigations from '../../constants/navigations';
+import { navigations } from '../../constants/navigations';
 import NavBarItem from './NavBarItem';
 import { NavitemProps } from './types';
 

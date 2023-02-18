@@ -9,15 +9,16 @@ const Wrapper = styled('div')(({ theme }) => ({
     fontSize: '2.7rem',
     textAlign: 'center',
   },
-  h4: {
+  h6: {
     color: theme.palette.textColor,
-    fontSize: '1.2rem',
+    fontSize: '1rem',
     margin: '4rem 5rem',
   },
   '@media (max-width: 767px)': {
     padding: '0.2rem',
     margin: '0.7rem',
-    h4: {
+    h6: {
+      color: theme.palette.textColor,
       fontSize: '1rem',
       margin: '3.5rem 1rem',
     },
@@ -27,7 +28,7 @@ const Wrapper = styled('div')(({ theme }) => ({
 const Podcasts = () => (
   <Wrapper>
     <h1>Podcasts</h1>
-    <h4>
+    <h6>
       All it needs a small TRIGGER!
       Welcome to the official Podcast of Probe,
       NIT Trichy, the annual national technical
@@ -36,7 +37,7 @@ const Podcasts = () => (
       This podcast hosts interviews of respectable figures in the fields of
       electronics, communication and STEM in general.
       Stay tuned to find new perspectives about latest developments in technology and society.
-    </h4>
+    </h6>
     <PodcastsTab />
   </Wrapper>
 );

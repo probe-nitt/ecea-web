@@ -48,9 +48,10 @@ const DescriptionWrapper = styled('div')({
   flex: 2.5,
 });
 
-const Description = styled('p')(({ theme }) => ({
-  fontSize: '1.2rem',
+const Description = styled('h6')(({ theme }) => ({
+  fontSize: '1rem',
   padding: '0.1rem',
+  margin: 0,
   color: theme.palette.textColor,
   '@media (max-width: 767px)': {
     fontSize: '1rem',

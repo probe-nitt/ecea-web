@@ -7,10 +7,8 @@ import { NavindicatorProps, NavitemProps } from './types';
 
 const Navitem = styled('li')({
   listStyleType: 'none',
-  margin: '0.2rem 0',
-  '@media (max-width: 767px)': {
-    margin: '0.1rem 0 0rem 0',
-  },
+  margin: '0.1rem 0',
+
 });
 
 const NavitemContent = styled('div')<NavindicatorProps>(({ theme, bg, isActive }) => ({
@@ -18,8 +16,8 @@ const NavitemContent = styled('div')<NavindicatorProps>(({ theme, bg, isActive }
   display: 'flex',
   fontWeight: 'bold',
   gap: '0.75rem',
-  padding: '0.7rem 0 0.7rem 1.2rem',
-  margin: '0 0.5rem 0 0.25rem',
+  padding: '0.65rem 0 0.65rem 1.2rem',
+  margin: '0 1rem 0 0.5rem',
   cursor: 'pointer',
   color: isActive ? theme.palette.activeColor : theme.palette.inactiveColor,
   background: isActive ? theme.palette.activeBackgroundColor

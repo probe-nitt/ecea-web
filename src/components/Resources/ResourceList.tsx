@@ -3,6 +3,9 @@ import ResourceCard from './ResourceCard';
 import { Resources, Subject } from './types';
 
 const Content = styled('div')({
+  display: 'block',
+  width: '100%',
+  overflow: 'hidden',
   '@media (max-width: 767px)': {
     margin: '3rem 0rem',
   },
@@ -12,6 +15,7 @@ const Title = styled('h6')(({ theme }) => ({
   margin: '5rem 1rem 1.5rem 2rem',
   fontWeight: 900,
   fontSize: '1.4rem',
+
   color: theme.palette.subTitleColor,
   '@media (max-width: 767px)': {
     fontSize: '1.3rem',
@@ -20,16 +24,14 @@ const Title = styled('h6')(({ theme }) => ({
 }));
 
 const Row = styled('div')(({ theme }) => ({
-  margin: '2rem 0.5rem',
-  borderRadius: '0.4rem',
-  padding: '1.5rem 0.5rem',
-  background: theme.palette.sectionBackgroundColor,
-  alignItems: 'stretch',
-  display: 'flex',
-  flexDirection: 'row',
-  flexWrap: 'nowrap',
-  overflowX: 'auto',
+  display: 'block',
+  height: '19rem',
+  overflowX: 'scroll',
   overflowY: 'hidden',
+  padding: '1rem 0.5rem',
+  margin: '1rem',
+  whiteSpace: 'nowrap',
+  background: theme.palette.sectionBackgroundColor,
   marginTop: '1rem',
   '&::-webkit-scrollbar': {
     display: 'none',

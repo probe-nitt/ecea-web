@@ -255,3 +255,58 @@ export const gallery = [
     title: 'SAA',
   },
 ];
+
+export const feeds = [
+  {
+    name: '',
+    image: 'https://scontent.fixm1-1.fna.fbcdn.net/v/t39.30808-6/325458269_851760495880559_6431694888030148093_n.png?stp=dst-png_p526x296&_nc_cat=108&ccb=1-7&_nc_sid=730e14&_nc_ohc=vG8Ik65_UWIAX-U963X&_nc_ht=scontent.fixm1-1.fna&oh=00_AfCtmHSlg0jFHKpJXQdLJpBS7at3wuagG4jGyf85chCPZA&oe=63F4F629',
+    description: 'Celebrate the beauty of the Harvest season with its rich symbolism and meaningful traditions. May this festival bring you lots of joy, good fortune in your home, and success at your feet. \nProbe sends you all the warmest wishes for a very Happy Pongal!',
+    link: 'https://media.licdn.com/dms/image/C5622AQFLzHYOuVfb7Q/feedshare-shrink_800/0/1673767338121?e=1679529600&v=beta&t=bRafrD4chzeM9A4-8LoZpm884BtGn2C_QvB2rYu5-jY',
+    type: 'image',
+    category: 'Events',
+    from: {
+      image: 'https://cdn-images-1.medium.com/max/1200/1*iYO29FHhxIEvQRIZEkwnow.jpeg',
+      name: 'Probe',
+      email: 'probe@nitt.edu',
+    },
+  },
+  {
+    name: '',
+    image: 'https://scontent.fixm1-1.fna.fbcdn.net/v/t39.30808-6/325458269_851760495880559_6431694888030148093_n.png?stp=dst-png_p526x296&_nc_cat=108&ccb=1-7&_nc_sid=730e14&_nc_ohc=vG8Ik65_UWIAX-U963X&_nc_ht=scontent.fixm1-1.fna&oh=00_AfCtmHSlg0jFHKpJXQdLJpBS7at3wuagG4jGyf85chCPZA&oe=63F4F629',
+    description: 'Celebrate the beauty of the Harvest season with its rich symbolism and meaningful traditions. May this festival bring you lots of joy, good fortune in your home, and success at your feet. <br/> Probe sends you all the warmest wishes for a very Happy Pongal!',
+    link: 'https://media.licdn.com/dms/image/C5622AQFLzHYOuVfb7Q/feedshare-shrink_800/0/1673767338121?e=1679529600&v=beta&t=bRafrD4chzeM9A4-8LoZpm884BtGn2C_QvB2rYu5-jY',
+    type: 'image',
+    category: 'Events',
+    from: {
+      image: 'https://cdn-images-1.medium.com/max/1200/1*iYO29FHhxIEvQRIZEkwnow.jpeg',
+      name: 'Probe',
+      email: 'probe@nitt.edu',
+    },
+  },
+  {
+    name: '',
+    image: 'https://scontent.fixm1-1.fna.fbcdn.net/v/t39.30808-6/325458269_851760495880559_6431694888030148093_n.png?stp=dst-png_p526x296&_nc_cat=108&ccb=1-7&_nc_sid=730e14&_nc_ohc=vG8Ik65_UWIAX-U963X&_nc_ht=scontent.fixm1-1.fna&oh=00_AfCtmHSlg0jFHKpJXQdLJpBS7at3wuagG4jGyf85chCPZA&oe=63F4F629',
+    description: 'Celebrate the beauty of the Harvest season with its rich symbolism and meaningful traditions. May this festival bring you lots of joy, good fortune in your home, and success at your feet. <br/> Probe sends you all the warmest wishes for a very Happy Pongal!',
+    link: 'https://media.licdn.com/dms/image/C5622AQFLzHYOuVfb7Q/feedshare-shrink_800/0/1673767338121?e=1679529600&v=beta&t=bRafrD4chzeM9A4-8LoZpm884BtGn2C_QvB2rYu5-jY',
+    type: 'image',
+    category: 'Events',
+    from: {
+      image: 'https://cdn-images-1.medium.com/max/1200/1*iYO29FHhxIEvQRIZEkwnow.jpeg',
+      name: 'Probe',
+      email: 'probe@nitt.edu',
+    },
+  },
+  {
+    name: '',
+    image: 'https://scontent.fixm1-1.fna.fbcdn.net/v/t39.30808-6/325458269_851760495880559_6431694888030148093_n.png?stp=dst-png_p526x296&_nc_cat=108&ccb=1-7&_nc_sid=730e14&_nc_ohc=vG8Ik65_UWIAX-U963X&_nc_ht=scontent.fixm1-1.fna&oh=00_AfCtmHSlg0jFHKpJXQdLJpBS7at3wuagG4jGyf85chCPZA&oe=63F4F629',
+    description: 'Celebrate the beauty of the Harvest season with its rich symbolism and meaningful traditions. May this festival bring you lots of joy, good fortune in your home, and success at your feet. <br/> Probe sends you all the warmest wishes for a very Happy Pongal!',
+    link: 'https://media.licdn.com/dms/image/C5622AQFLzHYOuVfb7Q/feedshare-shrink_800/0/1673767338121?e=1679529600&v=beta&t=bRafrD4chzeM9A4-8LoZpm884BtGn2C_QvB2rYu5-jY',
+    type: 'image',
+    category: 'Events',
+    from: {
+      image: 'https://cdn-images-1.medium.com/max/1200/1*iYO29FHhxIEvQRIZEkwnow.jpeg',
+      name: 'Probe',
+      email: 'probe@nitt.edu',
+    },
+  },
+];
