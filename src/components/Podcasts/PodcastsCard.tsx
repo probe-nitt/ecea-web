@@ -110,10 +110,10 @@ const PodcastCard = ({ podcast }:PodcastProps) => {
   const theme = useTheme();
   return (
     <Card>
-      <PodcastImage alt={podcast.image} src={podcast.image} />
+      <PodcastImage alt={podcast.image_url} src={podcast.image_url} />
       <PodcastContent>
-        <h1>{podcast.presenterName}</h1>
-        <h5>{podcast.presenterDescription}</h5>
+        <h1>{podcast.name}</h1>
+        <h5>{podcast.description}</h5>
         <div>
           <PodcastIcon style={{
             color: theme.palette.backgroundColor,
