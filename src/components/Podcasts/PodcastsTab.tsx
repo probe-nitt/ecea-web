@@ -4,9 +4,9 @@ import PodcastsPanel from './PodcastsPanel';
 import { TabPanelProps } from './types';
 
 const tabs = [
-  'All',
-  'Guest Lectures',
-  'Career Paths',
+  'ALL',
+  'GUEST_LECTURE',
+  'CAREER_PATH',
 ];
 
 const Content = styled('div')(({ theme }) => ({
@@ -46,29 +46,34 @@ const TabItem = styled('h5')<TabPanelProps>(({ theme, index, value }) => ({
 }));
 
 const PodcastsTab = () => {
-  const [value, setValue] = useState('All');
+  const [value, setValue] = useState('ALL');
+
   return (
-    <Content>
-      <TabList>
+    (
+      <Content>
+        <TabList>
+          {tabs.map((tab:string) => (
+            <TabItem
+              key={tab}
+              onClick={() => {
+                setValue(tab);
+              }}
+              index={tab}
+              value={value}
+            >
+              {tab.split('_').join(' ')}
+            </TabItem>
+          ))}
+        </TabList>
         {tabs.map((tab:string) => (
-          <TabItem
+          <PodcastsPanel
             key={tab}
-            onClick={() => setValue(tab)}
-            index={tab}
             value={value}
-          >
-            {tab}
-          </TabItem>
+            index={tab}
+          />
         ))}
-      </TabList>
-      {tabs.map((tab:string) => (
-        <PodcastsPanel
-          key={tab}
-          value={value}
-          index={tab}
-        />
-      ))}
-    </Content>
+      </Content>
+    )
   );
 };
 

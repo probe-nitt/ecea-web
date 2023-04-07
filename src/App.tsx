@@ -5,6 +5,8 @@ import {
   Suspense,
   useEffect, useMemo, useState,
 } from 'react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { BallTriangle } from 'react-loader-spinner';
 import router from './constants/routes';
 import { darkTheme, lightTheme } from './config/themes';
 import ThemingContext from './config/context';
@@ -50,7 +52,14 @@ const Layout = () => (
           width: '100%',
         }}
         >
-          Loading....
+          <BallTriangle
+            height={70}
+            width={70}
+            radius={5}
+            color="#007FEA"
+            ariaLabel="ball-triangle-loading"
+            visible
+          />
         </div>
       )}
       >
@@ -74,22 +83,33 @@ const App = () => {
     setTheme,
   }), [theme]);
 
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        retry: false,
+        refetchOnWindowFocus: false,
+      },
+    },
+  });
+
   return (
-    <ThemingContext.Provider value={themeMemo}>
-      <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
-        <Routes>
-          <Route path="" element={<Layout />}>
-            {router.map((nav) => (
-              <Route
-                key={nav.path}
-                path={nav.path}
-                element={nav.element}
-              />
-            ))}
-          </Route>
-        </Routes>
-      </ThemeProvider>
-    </ThemingContext.Provider>
+    <QueryClientProvider client={queryClient}>
+      <ThemingContext.Provider value={themeMemo}>
+        <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
+          <Routes>
+            <Route path="" element={<Layout />}>
+              {router.map((nav) => (
+                <Route
+                  key={nav.path}
+                  path={nav.path}
+                  element={nav.element}
+                />
+              ))}
+            </Route>
+          </Routes>
+        </ThemeProvider>
+      </ThemingContext.Provider>
+    </QueryClientProvider>
   );
 };
 
