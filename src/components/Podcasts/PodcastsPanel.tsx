@@ -3,7 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
 import PodcastCard from './PodcastsCard';
 import { Podcast, TabPanelProps } from './types';
-import { env } from '../../env';
+import { env } from '../../env'; // eslint-disable-line
 
 const TabGrid = styled('div')({
   minHeight: '40vh',
