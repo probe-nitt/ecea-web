@@ -61,13 +61,13 @@ const Gallery = () => {
         style={{ padding: '1rem' }}
         gap={20}
       >
-        {gallery.map((item) => (
+        {gallery.map((item, idx) => (
           <ImageItem key={item.title}>
             <img
               className="gallery"
               src={`${item.img}?w=248&fit=crop&auto=format`}
               srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-              alt={item.img}
+              alt={`Gallery pic ${idx}`}
               loading="lazy"
             />
           </ImageItem>

@@ -1,6 +1,5 @@
 import { styled } from '@mui/system';
 import TeamsList from '../components/Teams/TeamsList';
-import { teams } from '../constants/dummy';
 
 const Layout = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -20,7 +19,7 @@ const Layout = styled('div')(({ theme }) => ({
 const Teams = () => (
   <Layout>
     <h1>Our Team</h1>
-    <TeamsList teams={teams} />
+    <TeamsList />
   </Layout>
 );
 

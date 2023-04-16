@@ -2,14 +2,13 @@ import { Grid } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import { useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { BallTriangle } from 'react-loader-spinner';
+import { useEffect, useState } from 'react';
 import { styled } from '@mui/system';
 import { Team } from './types';
 import TeamCard from './TeamsCard';
-
-interface TeamProps {
-  teams: Team[]
-}
+import { env } from '../../env';
 
 const years = [
   '2023',
@@ -41,8 +40,44 @@ const DropDown = styled('div')(({ theme }) => ({
   },
 }));
 
-const TeamsList = ({ teams }:TeamProps) => {
+const ErrorMessage = styled('h2')(({ theme }) => ({
+  color: theme.palette.titleColor,
+  alignSelf: 'center',
+  justifySelf: 'center',
+  '@media (max-width: 1024px)': {
+    fontSize: '0.6rem',
+  },
+}));
+
+const TeamsList = () => {
+  // Helper functions
+  const fetchTeams = async () => {
+    try {
+      const res = await fetch(`${env.BACKEND_URL}/team/getall`);
+      const data = await res.json();
+      return data;
+    } catch (err) {
+      console.error(err); // eslint-disable-line
+      throw new Error('An error occurred...');
+    }
+  };
+
   const [year, setYear] = useState('2023');
+
+  const [teams, setTeams] = useState<Team[]>([]);
+
+  // Query
+  const { isError, isLoading, data } = useQuery({
+    queryKey: ['podcasts'],
+    queryFn: fetchTeams,
+  });
+
+  useEffect(() => {
+    if (!isLoading && data) {
+      setTeams(data.response);
+    }
+  }, [data, isLoading, isError]);
+
   return (
     <Layout>
       <DropDown>
@@ -70,6 +105,17 @@ const TeamsList = ({ teams }:TeamProps) => {
           </Select>
         </FormControl>
       </DropDown>
+      {isError && (<ErrorMessage>An Error Occurred...</ErrorMessage>)}
+      {isLoading && (
+      <BallTriangle
+        height={70}
+        width={70}
+        radius={5}
+        color="#007FEA"
+        ariaLabel="ball-triangle-loading"
+        visible
+      />
+      )}
       <Grid
         container
         direction="row"
