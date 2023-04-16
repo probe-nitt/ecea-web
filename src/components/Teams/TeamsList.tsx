@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 import { styled } from '@mui/system';
 import { Team } from './types';
 import TeamCard from './TeamsCard';
-import { env } from '../../env';
+import { env } from '../../env'; // eslint-disable-line
 
 const years = [
   '2023',
