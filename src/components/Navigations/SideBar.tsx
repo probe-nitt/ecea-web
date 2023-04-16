@@ -17,7 +17,7 @@ const NavBarContent = styled('div')(({ theme }) => ({
   zIndex: 2,
   flexDirection: 'column',
   alignItems: 'flex-start',
-  overflowY: 'scroll',
+  overflowY: 'hidden',
   marginBottom: 0,
   '@media (max-width: 767px)': {
     display: 'none',

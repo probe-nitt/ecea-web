@@ -5,6 +5,7 @@ import {
   Suspense,
   useEffect, useMemo, useState,
 } from 'react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import router from './constants/routes';
 import { darkTheme, lightTheme } from './config/themes';
 import ThemingContext from './config/context';
@@ -15,7 +16,7 @@ import BottomBar from './components/Navigations/BottomBar';
 const Structure = styled('div')({
   display: 'flex',
   flexDirection: 'row',
-  height: 'fit-content',
+  minHeight: '100vh',
   width: '100vw',
   overflowX: 'hidden',
   '@media (max-width: 767px)': {
@@ -25,7 +26,7 @@ const Structure = styled('div')({
 
 const Page = styled('div')(({ theme }) => ({
   flex: 1,
-  height: '100%',
+  minHeight: '100vh',
   background: theme.palette.backgroundColor,
   animation: 'gradient 15s ease infinite',
   padding: '1.5rem 0rem',
@@ -35,6 +36,8 @@ const Page = styled('div')(({ theme }) => ({
     padding: '5.5rem 0 1rem 0',
   },
 }));
+
+const queryClient = new QueryClient();
 
 const Layout = () => (
   <Structure>
@@ -75,21 +78,23 @@ const App = () => {
   }), [theme]);
 
   return (
-    <ThemingContext.Provider value={themeMemo}>
-      <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
-        <Routes>
-          <Route path="" element={<Layout />}>
-            {router.map((nav) => (
-              <Route
-                key={nav.path}
-                path={nav.path}
-                element={nav.element}
-              />
-            ))}
-          </Route>
-        </Routes>
-      </ThemeProvider>
-    </ThemingContext.Provider>
+    <QueryClientProvider client={queryClient}>
+      <ThemingContext.Provider value={themeMemo}>
+        <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
+          <Routes>
+            <Route path="" element={<Layout />}>
+              {router.map((nav) => (
+                <Route
+                  key={nav.path}
+                  path={nav.path}
+                  element={nav.element}
+                />
+              ))}
+            </Route>
+          </Routes>
+        </ThemeProvider>
+      </ThemingContext.Provider>
+    </QueryClientProvider>
   );
 };
 
