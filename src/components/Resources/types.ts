@@ -1,15 +1,17 @@
 export type Resources = {
-  subjectCategory: string
+  category: string
   subjects: Subject[]
 };
 
 export type Subject = {
-  subjectName: string
-  subjectImage: string
-  materials: SubjectMaterial[]
+  id:number
+  name: string
+  image_url: string
+  subject_code:string
+  materials:SubjectMaterial[] | null
 };
 
 export type SubjectMaterial = {
-  materialName: string
-  materialFile: string
+  name: string
+  document_url: string
 };

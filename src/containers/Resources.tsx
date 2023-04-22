@@ -1,6 +1,5 @@
 import { styled } from '@mui/system';
 import ResourcesList from '../components/Resources/ResourceList';
-import { resources } from '../constants/dummy';
 
 const Wrapper = styled('div')(({ theme }) => ({
   padding: '1rem 1.5rem',
@@ -18,7 +17,7 @@ const Wrapper = styled('div')(({ theme }) => ({
 const Resources = () => (
   <Wrapper>
     <h1>Core Resources</h1>
-    <ResourcesList resources={resources} />
+    <ResourcesList />
   </Wrapper>
 );
 

@@ -1,4 +1,5 @@
 import { styled } from '@mui/system';
+import { Link } from 'react-router-dom';
 import { Subject } from './types';
 
 const Card = styled('div')(({ theme }) => ({
@@ -46,11 +47,14 @@ const Title = styled('h5')(({ theme }) => ({
 interface SubjectProps {
   subject: Subject
 }
+
 const ResourceCard = ({ subject }:SubjectProps) => (
-  <Card>
-    <Image src={subject.subjectImage} />
-    <Title>{subject.subjectName}</Title>
-  </Card>
+  <Link to={`/resources/${subject.id}`}>
+    <Card>
+      <Image src={subject.image_url} />
+      <Title>{subject.name}</Title>
+    </Card>
+  </Link>
 );
 
 export default ResourceCard;
