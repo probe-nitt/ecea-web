@@ -1,8 +1,11 @@
 import { styled } from '@mui/system';
 import ResourcesList from '../components/Resources/ResourceList';
-import { resources } from '../constants/dummy';
 
 const Wrapper = styled('div')(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'stretch',
+  justifyContent: 'center',
   padding: '1rem 1.5rem',
   h1: {
     color: theme.palette.titleColor,
@@ -18,7 +21,7 @@ const Wrapper = styled('div')(({ theme }) => ({
 const Resources = () => (
   <Wrapper>
     <h1>Core Resources</h1>
-    <ResourcesList resources={resources} />
+    <ResourcesList />
   </Wrapper>
 );
 

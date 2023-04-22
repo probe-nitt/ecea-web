@@ -1,15 +1,14 @@
+import { Document } from '../Documents/types';
+
 export type Resources = {
-  subjectCategory: string
+  category: string
   subjects: Subject[]
 };
 
 export type Subject = {
-  subjectName: string
-  subjectImage: string
-  materials: SubjectMaterial[]
-};
-
-export type SubjectMaterial = {
-  materialName: string
-  materialFile: string
+  id:number
+  name: string
+  image_url: string
+  subject_code:string
+  materials:Document[]
 };

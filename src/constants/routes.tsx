@@ -1,4 +1,5 @@
 import { lazy } from 'react';
+import Documents from '../containers/Documents';
 
 const Home = lazy(() => import ('../containers/Home'));
 const Podcasts = lazy(() => import('../containers/Podcasts'));
@@ -21,6 +22,10 @@ const router = [
   {
     path: 'podcasts',
     element: <Podcasts />,
+  },
+  {
+    path: '/resources/:subjectId',
+    element: <Documents />,
   },
 ];
 
