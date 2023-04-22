@@ -24,16 +24,17 @@ const Title = styled('h6')(({ theme }) => ({
 }));
 
 const Row = styled('div')(({ theme }) => ({
-  margin: '2rem 0.5rem',
+  width: '65%',
+  // margin: '2rem',
   borderRadius: '0.4rem',
   padding: '1.5rem 0.5rem',
   background: theme.palette.sectionBackgroundColor,
-  alignItems: 'stretch',
+  alignItems: 'center',
   display: 'flex',
   flexDirection: 'row',
   flexWrap: 'nowrap',
-  overflowX: 'auto',
-  overflowY: 'hidden',
+  overflowX: 'scroll',
+  overflowY: 'scroll',
   marginTop: '1rem',
   '&::-webkit-scrollbar': {
     display: 'none',
@@ -53,7 +54,6 @@ const ErrorMessage = styled('h2')(({ theme }) => ({
   },
 }));
 
-
 const ResourcesList = () => {
   // Helper functions
   const fetchResources = async () => {
@@ -70,7 +70,7 @@ const ResourcesList = () => {
   const [resources, setResources] = useState<Resources[]>([]);
 
   const { isError, isLoading, data } = useQuery({
-    queryKey: ['podcasts'],
+    queryKey: ['studymaterials'],
     queryFn: fetchResources,
   });
 
@@ -79,8 +79,6 @@ const ResourcesList = () => {
       setResources(data.response);
     }
   }, [data, isLoading, isError]);
-
-  // console.log(resources);
 
   return (
     <>

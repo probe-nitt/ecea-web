@@ -1,3 +1,5 @@
+import { Document } from '../Documents/types';
+
 export type Resources = {
   category: string
   subjects: Subject[]
@@ -8,10 +10,5 @@ export type Subject = {
   name: string
   image_url: string
   subject_code:string
-  materials:SubjectMaterial[] | null
-};
-
-export type SubjectMaterial = {
-  name: string
-  document_url: string
+  materials:Document[]
 };

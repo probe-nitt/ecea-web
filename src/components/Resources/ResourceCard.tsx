@@ -5,7 +5,7 @@ import { Subject } from './types';
 const Card = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
-  width: 'fit-content',
+  width: '260px',
   fontWeight: 900,
   padding: '0.8rem',
   borderRadius: '0.5rem',

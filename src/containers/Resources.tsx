@@ -2,6 +2,10 @@ import { styled } from '@mui/system';
 import ResourcesList from '../components/Resources/ResourceList';
 
 const Wrapper = styled('div')(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'stretch',
+  justifyContent: 'center',
   padding: '1rem 1.5rem',
   h1: {
     color: theme.palette.titleColor,
