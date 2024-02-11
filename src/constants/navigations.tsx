@@ -2,7 +2,7 @@ import {
   MdOutlineDarkMode, MdOutlinePodcasts,
 } from 'react-icons/md';
 import {
-  VscOrganization, VscHome,
+  VscOrganization, VscHome, VscBook,
 } from 'react-icons/vsc';
 import { TbBooks } from 'react-icons/tb';
 
@@ -27,8 +27,12 @@ const navigations = [
     path: 'teams',
     element: <VscOrganization />,
   },
+  {
+    label: 'Blogs',
+    path: 'blogs',
+    element: <VscBook />,
+  },
 ];
-
 export const generals = [
   {
     label: 'DarkMode',

@@ -4,6 +4,7 @@ const Home = lazy(() => import ('../containers/Home'));
 const Podcasts = lazy(() => import('../containers/Podcasts'));
 const Resources = lazy(() => import('../containers/Resources'));
 const Teams = lazy(() => import('../containers/Teams'));
+const Blogs = lazy(() => import('../containers/Blogs'));
 
 const router = [
   {
@@ -21,6 +22,10 @@ const router = [
   {
     path: 'podcasts',
     element: <Podcasts />,
+  },
+  {
+    path: 'blogs',
+    element: <Blogs />,
   },
 ];
 
