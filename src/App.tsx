@@ -1,10 +1,7 @@
 import { Outlet, Route, Routes } from 'react-router-dom';
 import { styled } from '@mui/system';
 import { ThemeProvider } from '@mui/material';
-import {
-  Suspense,
-  useEffect, useMemo, useState,
-} from 'react';
+import { Suspense, useEffect, useMemo, useState } from 'react';
 import router from './constants/routes';
 import { darkTheme, lightTheme } from './config/themes';
 import ThemingContext from './config/context';
@@ -41,18 +38,20 @@ const Layout = () => (
     <AppBar />
     <SideBar />
     <Page>
-      <Suspense fallback={(
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '100vh',
-          width: '100%',
-        }}
-        >
-          Loading....
-        </div>
-      )}
+      <Suspense
+        fallback={
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              height: '100vh',
+              width: '100%',
+            }}
+          >
+            Loading....
+          </div>
+        }
       >
         <Outlet />
       </Suspense>
@@ -69,10 +68,13 @@ const App = () => {
     setTheme(prefTheme ?? 'light');
   }, []);
 
-  const themeMemo = useMemo(() => ({
-    theme,
-    setTheme,
-  }), [theme]);
+  const themeMemo = useMemo(
+    () => ({
+      theme,
+      setTheme,
+    }),
+    [theme]
+  );
 
   return (
     <ThemingContext.Provider value={themeMemo}>
@@ -80,11 +82,7 @@ const App = () => {
         <Routes>
           <Route path="" element={<Layout />}>
             {router.map((nav) => (
-              <Route
-                key={nav.path}
-                path={nav.path}
-                element={nav.element}
-              />
+              <Route key={nav.path} path={nav.path} element={nav.element} />
             ))}
           </Route>
         </Routes>
