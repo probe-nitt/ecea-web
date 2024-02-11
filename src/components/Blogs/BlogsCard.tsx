@@ -5,23 +5,17 @@ const Card = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'row',
   alignSelf: 'center',
+  border: '1px solid #6AE1DD',
   gap: '0.1rem',
   margin: '1rem 1.2rem',
   position: 'relative',
   height: '8rem',
-  padding: '0.25rem',
+  padding: '0.5rem',
   borderRadius: '0.4rem',
   alignItems: 'center',
-  boxShadow: theme.palette.cardShadow,
   ':hover': {
     boxShadow: theme.palette.cardHoverShadow,
     transform: 'scale(1.02)',
-  },
-  '@media (max-width: 1000px)': {
-    width: '100%',
-    height: '8.5rem',
-    gap: '0.5rem',
-    margin: '1rem 0',
   },
 }));
 
@@ -30,13 +24,14 @@ const BlogContent = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   alignSelf: 'flex-start',
-  padding: '1 1rem',
+  textOverflow: 'ellipsis',
+  padding: '1 0.5rem',
   width: '100%',
   h1: {
     textAlign: 'start',
     padding: 0,
     margin: '0.5rem 0 0.2rem 0',
-    fontSize: '1rem',
+    fontSize: '1.3rem',
   },
   h5: {
     textAlign: 'start',
@@ -61,14 +56,15 @@ const BlogContent = styled('div')(({ theme }) => ({
     },
   },
   '@media (max-width: 767px)': {
-    padding: '0.5rem',
+    padding: '0rem',
     h1: {
       margin: '0.2rem 0',
       fontSize: '0.9rem',
     },
     h5: {
-      overflow: 'clip',
-      fontSize: '0.7rem',
+      height: '2.5rem',
+      overflow: 'hidden',
+      fontSize: '0.5rem',
     },
   },
 }));
