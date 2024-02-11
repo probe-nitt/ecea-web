@@ -3,7 +3,9 @@ import { useState } from 'react';
 import BlogsPanel from './BlogsPanel';
 import { TabBlogProps } from './types';
 
-const tabs = ['Blogs on medium.com'];
+const tabs = [
+  'Blogs on medium.com',
+];
 
 const Content = styled('div')(({ theme }) => ({
   height: 'fit-content',
@@ -21,12 +23,8 @@ const TabList = styled('div')({
 });
 
 const TabItem = styled('h5')<TabBlogProps>(({ theme, index, value }) => ({
-  color:
-    index === value
-      ? theme.palette.activeBackgroundColor
-      : theme.palette.subTitleColor,
-  backgroundColor:
-    index === value ? theme.palette.hoverBackgroundColor : 'transparent',
+  color: index === value ? theme.palette.activeBackgroundColor : theme.palette.subTitleColor,
+  backgroundColor: index === value ? theme.palette.hoverBackgroundColor : 'transparent',
   fontSize: '1rem',
   cursor: 'pointer',
   flex: 1,
@@ -34,17 +32,13 @@ const TabItem = styled('h5')<TabBlogProps>(({ theme, index, value }) => ({
   textAlign: 'center',
   padding: '0.8rem 0rem',
   margin: '0rem',
-  borderRadius: `${index === tabs[0] ? '0.8rem' : '0'} ${
-    index === tabs[0] ? '0.8rem' : '0'
-  } 0 0 `,
-  borderBottom: `3px solid ${
-    index !== value
-      ? theme.palette.backgroundColor
-      : theme.palette.activeBackgroundColor
-  }`,
+  borderRadius: `${index === tabs[0] ? '0.8rem' : '0'} ${index === tabs[0] ? '0.8rem' : '0'} 0 0 `,
+  borderBottom: `3px solid ${index !== value ? theme.palette.backgroundColor
+    : theme.palette.activeBackgroundColor}`,
   '@media (max-width: 767px)': {
     fontSize: '0.8rem',
   },
+
 }));
 
 const BlogsTab = () => {
@@ -52,7 +46,7 @@ const BlogsTab = () => {
   return (
     <Content>
       <TabList>
-        {tabs.map((tab: string) => (
+        {tabs.map((tab:string) => (
           <TabItem
             key={tab}
             onClick={() => setValue(tab)}
@@ -63,8 +57,12 @@ const BlogsTab = () => {
           </TabItem>
         ))}
       </TabList>
-      {tabs.map((tab: string) => (
-        <BlogsPanel key={tab} value={value} index={tab} />
+      {tabs.map((tab:string) => (
+        <BlogsPanel
+          key={tab}
+          value={value}
+          index={tab}
+        />
       ))}
     </Content>
   );

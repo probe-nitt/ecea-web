@@ -4,18 +4,17 @@ import BlogCard from './BlogsCard';
 import { Blog, TabBlogProps } from './types';
 
 const TabGrid = styled('div')({
-  margin: '0rem 1rem',
+  margin: '0rem 0.5rem',
   borderRadius: '0.4rem',
-  // padding: '2.5rem 0rem',
-  display: 'flex',
-  flexDirection: 'column',
+  padding: '2.5rem 0rem',
+  display: 'grid',
   justifyContent: 'center',
   gridTemplateColumns: 'repeat(auto-fit, minmax(21.5rem, max-content))',
   '@media (max-width: 767px)': {
     display: 'flex',
     flexDirection: 'column',
-    padding: '0rem',
-    justifyConaltent: 'center',
+    padding: '1rem',
+    justifyContent: 'center',
   },
 });
 
@@ -27,7 +26,7 @@ const BlogsPanel = ({ value, index }: TabBlogProps) => (
   >
     {value === index && (
       <TabGrid>
-        {blogs.map((blog: Blog) => (
+        {blogs.map((blog:Blog) => (
           <BlogCard blog={blog} />
         ))}
       </TabGrid>

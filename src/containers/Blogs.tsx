@@ -28,13 +28,13 @@ const Blogs = () => (
   <Wrapper>
     <h1>Blogs</h1>
     <h4>
-      Welcome to the official Blogs section of Probe, NIT Trichy. Explore a
-      diverse array of topics through our insightful articles, covering
-      technology, society, science, and more. Stay informed, inspired, and
-      engaged as you navigate through our collection of thoughtfully curated
-      posts. Whether you are seeking expert opinions, analyses, or practical
-      tips, our blog is your go-to destination for enriching content and new
-      perspectives
+      Welcome to the official Blogs section of Probe, NIT Trichy.
+      Explore a diverse array of topics through our insightful articles,
+      covering technology, society, science, and more.
+      Stay informed, inspired, and engaged as you navigate through
+      our collection of thoughtfully curated posts.
+      Whether you are seeking expert opinions, analyses, or practical tips,
+      our blog is your go-to destination for enriching content and new perspectives
     </h4>
     <BlogsTab />
   </Wrapper>
