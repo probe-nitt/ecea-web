@@ -1,3 +1,50 @@
+export const blogs = [
+  {
+    title: 'Road to Devcon Meetup and Event Grants',
+    description: 'Community organizers are the glue that holds the Ethereum ecosystem together, and whether they’re leading large-scale events, local meetups, hackathons or seminars, we might all be wandering in the dark forest of the analog world without them. But where’s the fun in relying on chance encounters with kindred spirits identified...',
+    link: 'https://blog.ethereum.org/2021/07/15/r2d-meetup-and-event-grants/',
+  },
+  {
+    title: 'London Mainnet Announcement',
+    description: 'After a successful testnet deployement, the London upgrade is now ready to be activated on the Ethereum mainnet. It will go live on block 12 965 000, which is expected between August 3-5, 2021. Client Versions In order to be compatible with the London upgrade, node operators will need to...',
+    link: 'https://blog.ethereum.org/2021/07/15/london-mainnet-announcement/',
+  },
+  {
+    title: 'Allocation Update: Q1 2021',
+    description: 'Happy July! Read on for the list of projects funded in Q1 of this year. But first: office hours are in session! Signups are open now through this Sunday (July 4) for teams or individuals to request a one-on-one call with the ESP team during the week of July 5-9....',
+    link: 'https://blog.ethereum.org/2021/07/01/esp-allocation-update-q1-2021/',
+  },
+  {
+    title: 'Road to Devcon Meetup and Event Grants',
+    description: 'Community organizers are the glue that holds the Ethereum ecosystem together, and whether they’re leading large-scale events, local meetups, hackathons or seminars, we might all be wandering in the dark forest of the analog world without them. But where’s the fun in relying on chance encounters with kindred spirits identified...',
+    link: 'https://blog.ethereum.org/2021/07/15/r2d-meetup-and-event-grants/',
+  },
+  {
+    title: 'London Mainnet Announcement',
+    description: 'After a successful testnet deployement, the London upgrade is now ready to be activated on the Ethereum mainnet. It will go live on block 12 965 000, which is expected between August 3-5, 2021. Client Versions In order to be compatible with the London upgrade, node operators will need to...',
+    link: 'https://blog.ethereum.org/2021/07/15/london-mainnet-announcement/',
+  },
+  {
+    title: 'Allocation Update: Q1 2021',
+    description: 'Happy July! Read on for the list of projects funded in Q1 of this year. But first: office hours are in session! Signups are open now through this Sunday (July 4) for teams or individuals to request a one-on-one call with the ESP team during the week of July 5-9....',
+    link: 'https://blog.ethereum.org/2021/07/01/esp-allocation-update-q1-2021/',
+  },
+  {
+    title: 'Road to Devcon Meetup and Event Grants',
+    description: 'Community organizers are the glue that holds the Ethereum ecosystem together, and whether they’re leading large-scale events, local meetups, hackathons or seminars, we might all be wandering in the dark forest of the analog world without them. But where’s the fun in relying on chance encounters with kindred spirits identified...',
+    link: 'https://blog.ethereum.org/2021/07/15/r2d-meetup-and-event-grants/',
+  },
+  {
+    title: 'London Mainnet Announcement',
+    description: 'After a successful testnet deployement, the London upgrade is now ready to be activated on the Ethereum mainnet. It will go live on block 12 965 000, which is expected between August 3-5, 2021. Client Versions In order to be compatible with the London upgrade, node operators will need to...',
+    link: 'https://blog.ethereum.org/2021/07/15/london-mainnet-announcement/',
+  },
+  {
+    title: 'Allocation Update: Q1 2021',
+    description: 'Happy July! Read on for the list of projects funded in Q1 of this year. But first: office hours are in session! Signups are open now through this Sunday (July 4) for teams or individuals to request a one-on-one call with the ESP team during the week of July 5-9....',
+    link: 'https://blog.ethereum.org/2021/07/01/esp-allocation-update-q1-2021/',
+  },
+];
 export const resources = [
   {
     subjectCategory: 'Analog Electronics',
